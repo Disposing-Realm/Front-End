@@ -1,10 +1,15 @@
 import React from "react";
-
-export default function NavBar () {
+import "./navbar.css"
+export default function NavBar() {
     return (
         <div>
             <nav>
-                Hello World
+                <div className="logo">
+                    <h2 className="linkers" id="marcy-logo">Disposing Realm</h2>
+                </div>
+                <div className="links">
+                    <div className="linkers" id="sign-out">Sign Out</div>
+                </div>
             </nav>
         </div>
 
