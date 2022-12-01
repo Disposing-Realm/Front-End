@@ -2,6 +2,10 @@
     margin: auto;
     padding: auto;
 }
+#text{
+    background-color: yellow;
+   
+}
 
 p{
     max-width: 600px;
