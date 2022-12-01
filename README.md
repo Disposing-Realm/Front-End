@@ -41,12 +41,12 @@ From within the root directory:
 
 ### Roadmap
 
-
+View the project roadmap [here](https://github.com/orgs/Disposing-Realm/projects/2/views/1).
 
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/orgs/Disposing-Realm/projects/2/views/1) for contribution guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 
 ## Style Guide
