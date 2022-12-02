@@ -2,3 +2,15 @@
     display:flex;
     margin-top: 10%;
 }
+
+#second-section{
+    display:flex;
+    margin-top: 10%;
+    flex-direction: row-reverse;
+
+}
+
+#third-section{
+    display:flex;
+    margin-top: 10%;
+}

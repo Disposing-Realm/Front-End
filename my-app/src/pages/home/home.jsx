@@ -12,6 +12,14 @@ export default function Home(/*{setAuth}*/) {
         <img src={logo} className="App-logo" alt="logo" />
         <Hometext id="hometext" />
       </div>
+      <div id="second-section">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Hometext id="hometext" />
+      </div>
+      <div id="third-section">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Hometext id="hometext" />
+      </div>
       {/* <div className="homeContainer">
           <Sidebar />
           <Feed key={user.user_id} userInfo={user}/>
