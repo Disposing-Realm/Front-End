@@ -3,7 +3,7 @@ import "./hometext.css"
 
 export default function Hometext () {
     return (
-        <div>
+        <div id="text">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in metus non metus pretium mattis quis tincidunt tellus.
                  Morbi lobortis tincidunt quam non rutrum. Sed et fringilla neque, eu vestibulum lorem. Ut ut tellus magna. Integer ut 
                  efficitur neque. Etiam vestibulum est sit amet enim pellentesque, porttitor faucibus nisl ultrices. Suspendisse sodales 
