@@ -8,7 +8,8 @@ export default function NavBar() {
                     <h2 className="linkers" id="marcy-logo">Disposing Realm</h2>
                 </div>
                 <div className="links">
-                    <div className="linkers" id="sign-out">Sign Out</div>
+                    <div className="linkers" id="sign-in">Sign In</div>
+                    <div className="linkers" id="sign-in">Register</div>
                 </div>
             </nav>
         </div>
