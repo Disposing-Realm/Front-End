@@ -4,7 +4,7 @@ import Register from "./pages/register/register.jsx"
 import { React, useState, useEffect } from "react";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
-function App() {
+ function App() {
   return (
     <div>
       <Routes>
