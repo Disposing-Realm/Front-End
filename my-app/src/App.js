@@ -1,6 +1,7 @@
 import './App.css';
 import Home from "./pages/home/home.jsx"
 import Register from "./pages/register/register.jsx"
+import Landing from "./pages/landing/landing.jsx"
 import { React, useState, useEffect } from "react";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
@@ -12,7 +13,7 @@ import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
         <Route path="/login" element={<></>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/profile" element={<></>} />
-        <Route path="/landing" element={<></>} />
+        <Route path="/landing" element={<Landing/>} />
       </Routes>
     </div>
   );
