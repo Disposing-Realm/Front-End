@@ -5,7 +5,7 @@ export default function NavBar() {
         <div>
             <nav>
                 <div className="logo">
-                    <h2 className="linkers" id="marcy-logo">Disposing Realm</h2>
+                    <h2 className="linkers" id="logo-text">Disposing Realm</h2>
                 </div>
                 <div className="links">
                     <div className="linkers" id="sign-in">Sign In</div>
