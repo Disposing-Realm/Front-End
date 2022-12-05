@@ -23,9 +23,9 @@ export default function Posts({ post, posts, setPosts, userInfo }) {
                 <div className="username">
                     <p className="username-text">Evan Lu</p>
                     <div>{console.log(user, "post")}</div>
-                </div>
-                <div className="timestamp">
+                    <div className="timestamp">
                     <p className="timestamp-text">10 hours ago</p>
+                </div>
                 </div>
             </div>
             <div className="post-content">
@@ -55,7 +55,7 @@ export default function Posts({ post, posts, setPosts, userInfo }) {
             <div className="write-comment-section">
                 <form>
                     <div className="comment-bar">
-                        <input type="text" className="comment-text" name="search" size="35" placeholder="     Write a comment..." required
+                        <input type="text" className="comment-text" name="search" size="35" placeholder= "Write a comment..." required
                             id="commentPost" />
                         <button className="submit-comment-button">Post Comment</button>
                     </div>
