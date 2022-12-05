@@ -6,24 +6,26 @@ import AppContext from "../../context/appContext.jsx";
 
 export default function Feed() {
     const [posts, setPosts] = useState([]);
-    const { user } = useContext(AppContext)
+    const userInfo = useContext(AppContext)
+    console.log(userInfo,"context")
+    
+      useEffect(() => {
 
-    useEffect(() => {
-        fetch("http://localhost:3001/posts/feed")
-          .then((response) => response.json())
-          .then((data) => 
-        //   setPosts(data.data)
-        console.log(data, "feed data")
-          );
-      }, []);
-
+        const getUrl = 'http://localhost:3001/posts/feed';
+        async function fetchPost() {
+          const response = await fetch(getUrl);
+          const postData = await response.json();
+          setPosts(postData.data);
+        }
+        fetchPost();
+      }, [userInfo.submitText]);
 
     return (
         <>
         <Share/>
         <Posts/>
         <div>
-            {console.log(user, "Feed")}
+            {console.log(userInfo, "Feed")}
         </div>
         </>
     )

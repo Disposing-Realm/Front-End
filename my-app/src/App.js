@@ -5,6 +5,7 @@ import Landing from "./pages/landing/landing.jsx"
 import { React, useState, useEffect } from "react";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
+
  function App() {
   return (
     <div>

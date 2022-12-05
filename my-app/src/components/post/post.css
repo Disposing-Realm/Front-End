@@ -31,29 +31,25 @@
     font-size: 17px;
     font-weight: bold;
     position: relative;
-    top: 10px;
-    left: 22px;
-    /* margin-left: 3%;
-    margin-top: 2%; */
+    margin-left: 5%;
 }
 /* .timestamp{
     margin-left: 3%;
 } */
 .timestamp-text {
-    font-size: 13px;
-    position: relative;
-    bottom: 10px;
-    left: 24px;
-    /* margin-left: 3%;
-    margin-bottom: 15%; */
+    justify-content: flex-end;
+    margin-left: 5%;
+
 }
 .post-content {
-    width: 90%;
+    width: 70%;
+    padding:5%;
     /* border-bottom: solid black; */
 }
 .post-content-text {
     text-align: left;
     font-size: 24px;
+    margin:auto;
 }
 .like-comment-button-section {
     display: flex;
@@ -80,6 +76,7 @@
 .comment-button {
     width: 25px;
     height: 25px;
+    margin-right: 10%;
 }
 .comment-button:hover {
     width: 30px;
@@ -107,27 +104,26 @@
     padding-bottom: .5%;
 }
 .commenter-comment-text{
-    font-size: 13px;
+    font-size: 16px;
+    text-align: start;
+    margin: 15px 25px;
 }
 .comment-text {
-    justify-content: center;
-    width: 400px;
-    height: 38px;
+    max-width: 40%;
+    height: 35px;
     background-color: white;
     color: #58997A;
     border-radius: 25px 0px 0px 25px;
     border: 0 solid black;
-    margin-top: 8%;
-    margin-bottom: 6%;
-    padding-left: 3%;
+    margin: 5% 0px;
+    padding: 0px 10px;
 }
 .submit-comment-button {
-    justify-content: center;
     background-color: 058a59;
     color: #58997A;
-    min-height: 38px;
+    min-height: 35px;
     min-width: 60px;
-    padding-right: 20px;
+    padding-right: 30px;
     border: 0 solid black;
     border-radius: 0px 25px 25px 0px;
 }
