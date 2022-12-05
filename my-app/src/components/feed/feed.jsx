@@ -4,29 +4,39 @@ import Share from "../share/share.jsx";
 import Posts from "../post/post.jsx";
 import AppContext from "../../context/appContext.jsx";
 
-export default function Feed() {
-    const [posts, setPosts] = useState([]);
-    const userInfo = useContext(AppContext)
-    console.log(userInfo,"context")
-    
-      useEffect(() => {
+function FeedList(posts) {
+  console.log(posts,"fetched")
+  return (
+    <div>
+      {posts.map((ele, i) =>
+        <Posts key={i + 1}/>
+      )}
+    </div>
+  );
+};
 
-        const getUrl = 'http://localhost:3001/posts/feed';
-        async function fetchPost() {
-          const response = await fetch(getUrl);
-          const postData = await response.json();
-          setPosts(postData.data);
-        }
-        fetchPost();
-      }, [userInfo.submitText]);
+function Feed() {
+  const [posts, setPosts] = useState([]);
+  const userInfo = useContext(AppContext)
+  console.log(userInfo, "context")
 
-    return (
-        <>
-        <Share/>
-        <Posts/>
-        <div>
-            {console.log(userInfo, "Feed")}
-        </div>
-        </>
-    )
+  useEffect(() => {
+    const getUrl = 'http://localhost:3001/posts/feed';
+    async function fetchPost() {
+      const response = await fetch(getUrl);
+      const postData = await response.json();
+      setPosts(postData);
+    }
+    fetchPost();
+  }, [userInfo.submitText]);
+  // console.log(posts, "fetched")
+
+  return (
+    <div>
+      <Share/>
+      {FeedList(posts)}
+    </div>
+  )
 }
+
+export default Feed;

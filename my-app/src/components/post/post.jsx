@@ -22,7 +22,6 @@ export default function Posts({ post, posts, setPosts, userInfo }) {
             <div className="post-info">
                 <div className="username">
                     <p className="username-text">Evan Lu</p>
-                    <div>{console.log(user, "post")}</div>
                     <div className="timestamp">
                     <p className="timestamp-text">10 hours ago</p>
                 </div>
