@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import AppContext from "../../context/appContext.jsx";
 
 
-export default function Posts({ post, posts, setPosts, userInfo }) {
+export default function Posts(props) {
     // const [like, setLike] = useState(post.like_count);
     // const [isLiked, setIsLiked] = useState(false);
     // const [isBookmarked, setIsBookmarked] = useState(false);
@@ -27,12 +27,14 @@ export default function Posts({ post, posts, setPosts, userInfo }) {
                 </div>
                 </div>
             </div>
+            {/* <img id="posted-image" src={props.image}></img> */}
             <div className="post-content">
                 <p className="post-content-text">
-                    I am feeling tired today. This has been a long week for me. I feel
-                    like the number of people who are tired is just tiring.
+                    {props.description}
                 </p>
             </div>
+            <img id="posted-image" src={props.image}></img>
+
             <div className="like-comment-button-section">
                 <div className="like-button-container">
                     <p className="like-button">Like</p>

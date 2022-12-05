@@ -11,6 +11,11 @@
     border-radius: 25px;
     margin-top: 50px;
 }
+
+#posted-image{
+    width: 80%;
+    height: 80%;
+}
 .post-info {
     /* display:flex; */
     flex-direction: column;

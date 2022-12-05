@@ -3,7 +3,7 @@ import AppContext from "./appContext";
 
 const ContextProvider = (props) => {
     const [message, getMessage] = useState(""); //onChange
-    const [submitText, getSubmitText] = useState(""); //onSumbit
+    let [submitText, getSubmitText] = useState(""); //onSumbit
    
     const getUserFeed = (event) => {
       event.preventDefault();
@@ -12,7 +12,7 @@ const ContextProvider = (props) => {
     };
 
     const postFeed = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         getSubmitText(message);
     };
     const [user, setUser] = useState(
