@@ -1,4 +1,6 @@
 .footer{
-background-color: darkslateblue;
-margin: auto;
+bottom: 0;
+position: relative;
+width: 100%;
+
 }

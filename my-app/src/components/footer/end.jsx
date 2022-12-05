@@ -1,8 +1,9 @@
+import "./end.jsx" 
 export default 
 function Footer() {
     return (
         <div className="footer">
-            <h1>LLC</h1>
+            &copy;{new Date().getFullYear()} Disposing Realm LLC | All rights reserved | Privacy
         </div>
     )
 }
