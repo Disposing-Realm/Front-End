@@ -1,16 +1,20 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState,  useContext} from "react";
 // import Comments from "../comments/Comments.jsx";
 import "./post.css";
 // import { DateTime } from "luxon";
 import { Link } from "react-router-dom";
+import AppContext from "../../context/appContext.jsx";
 
-export default function Post({ post, posts, setPosts, userInfo }) {
+
+export default function Posts({ post, posts, setPosts, userInfo }) {
     // const [like, setLike] = useState(post.like_count);
     // const [isLiked, setIsLiked] = useState(false);
     // const [isBookmarked, setIsBookmarked] = useState(false);
     // const [comments, setComments] = useState([]);
     // const [reply, setReply] = useState("");
     // const [showComment, setShowComment] = useState(false);
+    const { user } = useContext(AppContext)
+
 
 
     return (
@@ -18,6 +22,7 @@ export default function Post({ post, posts, setPosts, userInfo }) {
             <div className="post-info">
                 <div className="username">
                     <p className="username-text">Evan Lu</p>
+                    <div>{console.log(user, "post")}</div>
                 </div>
                 <div className="timestamp">
                     <p className="timestamp-text">10 hours ago</p>
