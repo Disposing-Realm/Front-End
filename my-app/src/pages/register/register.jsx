@@ -24,12 +24,14 @@ export default function Register() {
         e.preventDefault();
         console.log('You clicked submit.');
       }
-
+    function testing(e){
+        e.preventDefault()
+        console.log(e.target)
+        console.log("hi there love")
+    }
     return (
         <>
-            <NavBar /*key={user.user_id} userInfo={user} setAuth={setAuth}*/ />
-
-            <div className="right-side">
+            <form className="right-side" onSubmit={testing}>
                 <span className="logo">Register</span>
                 <div>
                     <span className="tagline">BRuuuhhhhh</span>
@@ -102,7 +104,7 @@ export default function Register() {
                     </button>
                 </div>
 
-            </div>
+            </form>
 
 
         </>
