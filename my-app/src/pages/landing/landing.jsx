@@ -5,6 +5,7 @@ import Footer from "../../components/footer/end.jsx"
 import Post from "../../components/post/post.jsx"
 import Feed from "../../components/feed/feed.jsx"
 import AppContext from "../../context/appContext.jsx";
+import { Link } from "react-router-dom";
 
 
 export default function Landing() {
@@ -12,6 +13,7 @@ export default function Landing() {
 
     return (
         <>
+        <Link to="../home"> </Link>
             <NavBar /*key={user.user_id} userInfo={user} setAuth={setAuth}*/ />
             <Feed />
             {/* <form id="submit-form">

@@ -3,18 +3,39 @@ import AppContext from "./appContext";
 
 const ContextProvider = (props) => {
     const [message, getMessage] = useState(""); //onChange
-    let [submitText, getSubmitText] = useState(""); //onSumbit
+    const [submitText, getSubmitText] = useState(""); //onSumbit
+    const [image, setImage] = useState("");//On change image holder
+    const [holdImage, getHoldImage] = useState(""); //onSumbit
    
-    const getUserFeed = (event) => {
+    //OnChange Input
+    const getUserInput = (event) => {
       event.preventDefault();
       const search = event.target.value;
       getMessage(search);
     };
 
+    //Submit Inputs
     const postFeed = (event) => {
-        // event.preventDefault();
         getSubmitText(message);
+        console.log(message)
     };
+
+
+    //Image Input
+    const handleImageInput = (event) => {
+        event.preventDefault();
+        let imgStr = event.target.value
+        setImage(imgStr)
+    }
+
+    //On Change to button
+    const sendPostedImage = (event) => {
+        event.preventDefault();
+        getHoldImage(image);
+        console.log(holdImage)
+    };
+
+
     const [user, setUser] = useState(
         {
             user_id: 1,
@@ -28,11 +49,12 @@ const ContextProvider = (props) => {
         user,
         setUser,
         message,
-        getMessage,
+        getUserInput,
         submitText,
         getSubmitText,
-        getUserFeed,
-        postFeed
+        postFeed,
+        handleImageInput,
+        sendPostedImage,
     }
 
     return (
