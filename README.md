@@ -22,12 +22,13 @@
 > Some usage instructions for getting the app up and running locally
 
 ## Requirements
-
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+"bulma": "^0.9.4",
+"react": "^18.2.0",
+"react-dom": "^18.2.0",
+react-router-dom": "^6.4.3",
+"react-scripts": "5.0.1",
+"styled-components": "^5.3.6",
+"web-vitals": "^2.1.4"
 
 ## Development
 
@@ -36,7 +37,10 @@
 From within the root directory:
 
 ```sh
-<COMMANDS_HERE>
+
+<npx create-react-app my-react-app>
+<npm install bulma>
+
 ```
 
 ### Roadmap
