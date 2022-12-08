@@ -5,14 +5,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ContextProvider from "./context/contextProvider";
+// import { context } from './contextAuth/context.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ContextProvider>
+    <ContextProvider>
     <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+    <App />
     </BrowserRouter>
   </ContextProvider>
 );
