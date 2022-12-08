@@ -22,7 +22,6 @@ root.render(
     </div>
     <Image publicId="sample" width="0.5" />
   </CloudinaryContext>
-
 );
 
 // If you want to start measuring performance in your app, pass a function

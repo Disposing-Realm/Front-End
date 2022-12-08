@@ -1,6 +1,5 @@
-import { React, useContext, useState } from "react";
+import { React, useContext } from "react";
 import "./share.css";
-// import ImageUploading from "react-images-uploading";
 import AppContext from "../../context/appContext";
 import { useEffect } from "react";
 import axios from "axios"
@@ -57,6 +56,7 @@ import ReactAvatarEditor from "react-avatar-editor";
 //         </>
 //     )
 //}
+
 
 export default function Share() {
     const form = document.querySelector("form");
@@ -122,3 +122,4 @@ export default function Share() {
         </>
     )
 }
+
