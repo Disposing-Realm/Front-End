@@ -6,13 +6,11 @@ export default function Share() {
     const userInfo = useContext(AppContext)
 
     const imgPost = (event) => {
-        event.preventDefault();
         const imgSearch = event.target.value;
         userInfo.holdImage = imgSearch
     };
 
     const textPost = (event) => {
-        event.preventDefault();
         const msgsearch = event.target.value;
         userInfo.message = msgsearch
     };
@@ -40,7 +38,7 @@ export default function Share() {
                     <input onChange={imgPost} type="text" id="img-text" name="search" size="35" placeholder="Upload Image Url" required autoComplete="off" />
                     <input onChange={textPost} type="text" id="post-text" name="search" size="35" placeholder="What's on your mind?" required autoComplete="off" />
                     <button onClick={createPost} type="button" id="submit-button-post">Post</button>
-                </div>
+                </div>  
             </form>
         </>
     )
