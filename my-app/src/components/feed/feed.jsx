@@ -3,11 +3,12 @@ import "./feed.css";
 import Share from "../share/share.jsx";
 import Posts from "../post/post.jsx";
 import AppContext from "../../context/appContext.jsx";
+import Resizer from "react-image-file-resizer"
 
 function FeedList(posts) {
     return (
         <div>
-            {posts.map((ele, i) =>
+            {posts.map((ele, i) => 
                 <Posts
                     key={i + 1}
                     description={ele.post_description}
@@ -15,23 +16,26 @@ function FeedList(posts) {
                 />
             )}
         </div>
-    );
-};
+    ); 
+};  
 
 function Feed() {
     const [posts, setPosts] = useState([]);
     const userInfo = useContext(AppContext)
-
+ 
     useEffect(() => {
-
         const getUrl = 'http://localhost:3001/posts/feed';
+        console.log("whyyyyy")
         async function fetchPost() {
             const response = await fetch(getUrl);
             const postData = await response.json();
-            setPosts(postData);
-        }
+            setPosts(postData); 
+            console.log("inside Whyyyyyy") 
+            console.log(posts)
+            console.log(postData) 
+        } 
         fetchPost();
-    }, [userInfo.submitText]);
+    }, []);   
 
     return (
         <div>
