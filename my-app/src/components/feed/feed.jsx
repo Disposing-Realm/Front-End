@@ -9,7 +9,6 @@ function Feed() {
     const [posts, setPosts] = useState([]);
     const [newPost, setNewPost] = useState([])
     const userInfo = useContext(AppContext)
-
     useEffect(() => {
         const getUrl = 'http://localhost:3001/posts/feed';
         async function fetchPost() {
