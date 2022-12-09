@@ -5,7 +5,7 @@ import axios from "axios"
 import { Image } from "cloudinary-react"
 import ReactAvatarEditor from "react-avatar-editor";
 
-export default function Share() {
+export default function Share(props) {
     const form = document.querySelector("form");
     const userInfo = useContext(AppContext)
     let [input, setInput] = useState("")
@@ -37,7 +37,6 @@ export default function Share() {
     // }
 
     const uploadImage = async (files, description) => {
-
         const httpLink = []
         for (let i = 0; i < files.length; i++) {
             const formData = new FormData()
@@ -49,6 +48,7 @@ export default function Share() {
             )
             httpLink.push(response.data.secure_url)
         }
+        console.log("does j")
 
         const postInfo = {
             post_description: description,
@@ -63,16 +63,19 @@ export default function Share() {
             },
             body: JSON.stringify(postInfo),
         });
-        const parsed = await result.json();
-        userInfo.postFeed()
+        // console.log("parsed")
 
+        const parsed = await result.json();
+        console.log(parsed)
+        
+        props.setNewPost(description)
     }
 
     return (
         <form onSubmit={(e) => {
             e.preventDefault()
             uploadImage(e.target[0].files, e.target[1].value )
-            // userInfo.postFeed()
+            userInfo.getSubmitText(e.target[1].value)
         }
         }>
             <label htmlFor="file">Choose a before and after photo to upload</label>
