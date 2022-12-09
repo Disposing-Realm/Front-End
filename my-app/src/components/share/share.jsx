@@ -4,6 +4,7 @@ import AppContext from "../../context/appContext";
 import axios from "axios"
 import { Image } from "cloudinary-react"
 import ReactAvatarEditor from "react-avatar-editor";
+import Resizer from "react-image-file-resizer";
 
 export default function Share(props) {
     const form = document.querySelector("form");
@@ -36,9 +37,45 @@ export default function Share(props) {
     //     userInfo.getSubmitText(userInfo.submitText = input)
     // }
 
+
+
+    //       // Resize image on change handler
+    //   const onChange = async (imageList) => {
+    //     try {
+    //       setImages(imageList);
+    //       const file = imageList[0].file;
+    //       const image = await resizeFile(file);
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   };
+
+    //   // Resize image function
+    //   const resizeFile = (file) =>
+    //     new Promise(() => {
+    //       Resizer.imageFileResizer(
+    //         file,
+    //         612,
+    //         400,
+    //         "JPEG",
+    //         80,
+    //         0,
+    //         (uri) => {
+    //           setTrialImage(uri)
+    //         },
+    //         "base64"
+    //       );
+    //     });
+
     const uploadImage = async (files, description) => {
         const httpLink = []
+        // const filesCompressed = files.map((ele) => resizeFile(ele))
+        
+        
         for (let i = 0; i < files.length; i++) {
+            // const filesCompressed = await resizeFile(files[i])
+
+
             const formData = new FormData()
             formData.append("file", files[i])
             formData.append("upload_preset", "tdfjlobt")
@@ -46,9 +83,13 @@ export default function Share(props) {
                 "https://api.cloudinary.com/v1_1/dtrzaq4sl/image/upload",
                 formData
             )
-            httpLink.push(response.data.secure_url)
+            let newUrl = response.data.secure_url
+            newUrl = newUrl.slice(newUrl.length - 4, newUrl.length) === "heic" ? newUrl.slice(0, newUrl.length - 4) + "jpg" :
+            newUrl
+            
+            
+            httpLink.push(newUrl)
         }
-        console.log("does j")
 
         const postInfo = {
             post_description: description,
@@ -66,16 +107,16 @@ export default function Share(props) {
         // console.log("parsed")
 
         const parsed = await result.json();
-        console.log(parsed)
-        
-        props.setNewPost(description)
+        console.log(parsed[0], "parsed")
+
+        props.setNewPost([parsed, ...props.newPost])
+        userInfo.getSubmitText(parsed)
     }
 
     return (
         <form onSubmit={(e) => {
             e.preventDefault()
-            uploadImage(e.target[0].files, e.target[1].value )
-            userInfo.getSubmitText(e.target[1].value)
+            uploadImage(e.target[0].files, e.target[1].value)
         }
         }>
             <label htmlFor="file">Choose a before and after photo to upload</label>

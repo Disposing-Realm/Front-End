@@ -7,7 +7,7 @@ import Resizer from "react-image-file-resizer"
 
 function Feed() {
     const [posts, setPosts] = useState([]);
-    const [newPost, setNewPost] = useState("")
+    const [newPost, setNewPost] = useState([])
     const userInfo = useContext(AppContext)
 
     useEffect(() => {
@@ -15,17 +15,16 @@ function Feed() {
         async function fetchPost() {
             const response = await fetch(getUrl);
             const postData = await response.json();
-            setPosts(postData);
-            console.log(posts)
+            setPosts( postData);
+            console.log("this is happening")
         }
         fetchPost();
-        console.log("useEffect")
-    }, [newPost ]); 
+    }, [userInfo.submitText]); 
 
 
     return (
         <div>
-            <Share setNewPost={setNewPost}/>
+            <Share setNewPost={setNewPost} newPost={newPost}/>
             {posts.map((ele, i) =>
                 <Posts
                     key={i + 1}
