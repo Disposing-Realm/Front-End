@@ -35,7 +35,7 @@ function Feed() {
             console.log(postData) 
         } 
         fetchPost();
-    }, []);   
+    }, [userInfo.postFeed]);   
 
     return (
         <div>
