@@ -17,7 +17,6 @@ const ContextProvider = (props) => {
     //Submit Inputs
     const postFeed = (event) => {
         getSubmitText(message);
-        console.log(message)
     };
 
 
@@ -32,7 +31,6 @@ const ContextProvider = (props) => {
     const sendPostedImage = (event) => {
         event.preventDefault();
         getHoldImage(image);
-        console.log(holdImage)
     };
 
  

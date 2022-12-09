@@ -21,7 +21,6 @@ function FeedList(posts) {
 function Feed() {
     const [posts, setPosts] = useState([]);
     const userInfo = useContext(AppContext)
-
     useEffect(() => {
 
         const getUrl = 'http://localhost:3001/posts/feed';
@@ -31,6 +30,7 @@ function Feed() {
             setPosts(postData);
         }
         fetchPost();
+        console.log(userInfo)
     }, [userInfo.submitText]);
 
     return (
