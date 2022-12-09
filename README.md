@@ -22,13 +22,19 @@
 > Some usage instructions for getting the app up and running locally
 
 ## Requirements
-"bulma": "^0.9.4",
-"react": "^18.2.0",
-"react-dom": "^18.2.0",
-react-router-dom": "^6.4.3",
-"react-scripts": "5.0.1",
-"styled-components": "^5.3.6",
-"web-vitals": "^2.1.4"
+-"bulma": "^0.9.4",
+
+-"react": "^18.2.0",
+
+-"react-dom": "^18.2.0",
+
+-"react-router-dom": "^6.4.3",
+
+-"react-scripts": "5.0.1",
+
+-"styled-components": "^5.3.6",
+
+-"web-vitals": "^2.1.4"
 
 ## Development
 
