@@ -16,7 +16,9 @@ const ContextProvider = (props) => {
 
     //Submit Inputs
     const postFeed = (event) => {
-        getSubmitText(message);
+        getSubmitText(event);
+        console.log("IS this actuallnjdn jfjdihn")
+        console.log(submitText)
     };
 
 

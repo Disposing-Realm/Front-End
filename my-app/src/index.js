@@ -21,10 +21,6 @@ root.render(
           <App />
       </BrowserRouter>
     </ContextProvider>
-    <div>
-      <Image publicId="sample" width="50" />
-    </div>
-    <Image publicId="sample" width="0.5" />
   </CloudinaryContext>
 
 );
@@ -33,15 +29,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-/* 
-<CloudinaryContext cloudName="dtrzaq4sl">
-  <div>
-    <Image publicId="sample" width="50" />
-  </div>
-  <Image publicId="sample" width="0.5" />
-</CloudinaryContext>
-
-
-*/
-
