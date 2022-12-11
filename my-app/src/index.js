@@ -24,10 +24,11 @@ root.render(
        <Image publicId="sample" width="0.5" /> */}
         <BrowserRouter>
           <App />
-        </BrowserRouter>
-      </ContextProvider>
-  //   </CloudinaryContext>
-  // </div>
+
+      </BrowserRouter>
+    </ContextProvider>
+  </CloudinaryContext>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
@@ -43,5 +44,3 @@ reportWebVitals();
   <Image publicId="sample" width="0.5" />
 </CloudinaryContext>
 
-
-*/
