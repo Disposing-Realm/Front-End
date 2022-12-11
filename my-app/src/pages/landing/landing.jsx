@@ -16,12 +16,12 @@ export default function Landing() {
         <Link to="../home"> </Link>
             <NavBar /*key={user.user_id} userInfo={user} setAuth={setAuth}*/ />
             <Feed />
-            {/* <form id="submit-form">
+            <form id="submit-form">
                 <div id="post-bar">
                     <input type="text" id="post-text" name="search" size="35" autocomplete="off" placeholder="What's on your mind?" required />
                     <button id="submit-button-post">Post</button>
                 </div>
-            </form> */}
+            </form>
         </>
     )
 }
