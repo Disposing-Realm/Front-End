@@ -18,11 +18,7 @@ function App() {
   return (
     <>
       <UserProvider>
-        {/* <div className="App">
-          {
-            currForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
-          }
-        </div> */}
+  
       </UserProvider>
       <Routes>
         <Route path="/landing" element={<Landing />} />

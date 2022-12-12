@@ -1,4 +1,4 @@
-import { React, useState, useContext, useEffect } from "react";
+import { React, useState, useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import { useNavigate } from "react-router-dom";
 
@@ -47,7 +47,6 @@ export const Login = (props) => {
       <input value = {password} onChange = {(e) => setPassword(e.target.value)} type = "password" placeholder = "******"></input>
       <button type = "submit"> Log In </button>
     </form>
-    <button onClick = {() => props.onFormSwitch('register')}> Don't have an account? Register here</button>
     </div>
 
   )

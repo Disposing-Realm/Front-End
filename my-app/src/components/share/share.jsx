@@ -4,7 +4,7 @@ import AppContext from "../../context/appContext";
 import axios from "axios"
 import { Image } from "cloudinary-react"
 import ReactAvatarEditor from "react-avatar-editor";
-import Resizer from "react-image-file-resizer";
+// import Resizer from "react-image-file-resizer";
 
 export default function Share(props) {
     const form = document.querySelector("form");
