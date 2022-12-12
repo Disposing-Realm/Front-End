@@ -10,6 +10,7 @@ export const Login = (props) => {
   const navigate = useNavigate();
   
   const sendCredentials = (email, password) => {
+    debugger
 
     fetch("http://localhost:3001/users/login", {
       method: "POST",
@@ -33,12 +34,12 @@ export const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     sendCredentials(email, password)
-    navigate("/home");
+    navigate("/landing");
   }
 
 
   return (
-    <div className="auth-form-container">
+    <div >
     <form onSubmit = {handleSubmit}>
       <label for = "email"> Email </label>
       <input value = {email} onChange = {(e) => setEmail(e.target.value)} type = "email" placeholder = "Insert email"></input>

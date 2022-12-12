@@ -16,13 +16,22 @@ function App() {
   }
 
   return (
-    <UserProvider>
-      <div className = "App">
-        {
-          currForm === "login" ? <Login onFormSwitch = {toggleForm}/> : <Register onFormSwitch = {toggleForm} />
-        }
-      </div>
-    </UserProvider>
+    <>
+      <UserProvider>
+        {/* <div className="App">
+          {
+            currForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
+          }
+        </div> */}
+      </UserProvider>
+      <Routes>
+        <Route path="/landing" element={<Landing />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register/>} />
+        <Route path="/profile" element={<></>} />
+      </Routes>
+    </>
   );
 }
 
