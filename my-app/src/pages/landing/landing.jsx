@@ -13,15 +13,9 @@ export default function Landing() {
 
     return (
         <>
-        <Link to="../home"> </Link>
-            <NavBar /*key={user.user_id} userInfo={user} setAuth={setAuth}*/ />
+        {/* <Link to="../home"> </Link> */}
+            <NavBar  />
             <Feed />
-            <form id="submit-form">
-                <div id="post-bar">
-                    <input type="text" id="post-text" name="search" size="35" autocomplete="off" placeholder="What's on your mind?" required />
-                    <button id="submit-button-post">Post</button>
-                </div>
-            </form>
         </>
     )
 }

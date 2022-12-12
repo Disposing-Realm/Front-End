@@ -82,10 +82,7 @@ export default function Share(props) {
                 formData
             )
             let newUrl = response.data.secure_url
-            newUrl = newUrl.slice(newUrl.length - 4, newUrl.length) === "heic" ? newUrl.slice(0, newUrl.length - 4) + "jpg" :
-                newUrl
-
-
+            newUrl = newUrl.slice(newUrl.length - 4, newUrl.length) === "heic" ? newUrl.slice(0, newUrl.length - 4) + "jpg" : newUrl
             httpLink.push(newUrl)
         }
 
