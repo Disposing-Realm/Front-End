@@ -2,15 +2,28 @@ import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ContextProvider from "./context/contextProvider";
-import {
-  Image,
-  Video,
-  Transformation,
-  CloudinaryContext,
-} from "cloudinary-react";
+import { CloudinaryContext } from "cloudinary-react";
+import { render } from 'react-dom';
+
+import Navbar from './components/top/navbar.jsx';
+
+import 'bulma/css/bulma.css';
+
+const styles = {
+  fontFamily: 'sans-serif',
+  textAlign: 'center',
+};
+
+const pages = ['about', 'contact', 'sitemap'];
+const App = () => (
+  <div style={styles}>
+    <Navbar pages={pages} />
+  </div>
+);
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,16 +37,4 @@ root.render(
 
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-/* 
-<CloudinaryContext cloudName="dtrzaq4sl">
-  <div>
-    <Image publicId="sample" width="50" />
-  </div>
-  <Image publicId="sample" width="0.5" />
-</CloudinaryContext>
-*/

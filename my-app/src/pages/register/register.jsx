@@ -10,7 +10,6 @@ export const Register = (props) => {
   const [lastName, setLastName] = useState("");
   const [userName, setUsername] = useState("")
   const navigate = useNavigate();
-  // const [isSubmitted, setIsSubmitted] = useState(false);
 
   function registerUser() {
     fetch("http://localhost:3001/users/register", {
@@ -32,7 +31,6 @@ export const Register = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     registerUser();
-    // setIsSubmitted(true);
     navigate("/login");
 
   };
