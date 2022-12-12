@@ -7,13 +7,23 @@ import { React, useState, useEffect } from "react";
 import { Login } from "./pages/register/login.js";
 import { Register } from "./pages/register/register.jsx"
 import { UserProvider } from "./context/userContext";
+import Navbar from './components/top/navbar.jsx';
 
+import 'bulma/css/bulma.css';
 
-function App() {
-  const [currForm, setCurrForm] = useState('login')
-  const toggleForm = (formName) => {
-    setCurrForm(formName)
-  }
+const styles = {
+  fontFamily: 'sans-serif',
+  textAlign: 'center',
+};
+
+const pages = ['about', 'contact', 'sitemap'];
+const App = () => {
+
+// function App() {
+//   const [currForm, setCurrForm] = useState('login')
+//   const toggleForm = (formName) => {
+//     setCurrForm(formName)
+//   }
 
   return (
     <>
