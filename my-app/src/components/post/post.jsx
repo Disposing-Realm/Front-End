@@ -1,4 +1,4 @@
-import { React, useEffect, useState,  useContext} from "react";
+import { React, useEffect, useState, useContext } from "react";
 import "./post.css";
 import { Link } from "react-router-dom";
 import AppContext from "../../context/appContext.jsx";
@@ -20,8 +20,8 @@ export default function Posts(props) {
                 <div className="username">
                     <p className="username-text">Evan Lu</p>
                     <div className="timestamp">
-                    <p className="timestamp-text">10 hours ago</p>
-                </div>
+                        <p className="timestamp-text">10 hours ago</p>
+                    </div>
                 </div>
             </div>
             <div className="post-content">
@@ -29,7 +29,10 @@ export default function Posts(props) {
                     {props.description}
                 </p>
             </div>
-            <img id="posted-image" src={props.image}></img>
+            <div className="image-container">
+                <img className="posted-image" src={props.image}></img>
+                <img className="posted-image" src={props.image2}></img>
+            </div>
 
             <div className="like-comment-button-section">
                 <div className="like-button-container">
@@ -39,6 +42,7 @@ export default function Posts(props) {
                     <p className="comment-button">Comment</p>
                 </div>
             </div>
-            <Comments/>
+            <Comments />
         </div>
-    )}
+    )
+}

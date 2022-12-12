@@ -14,20 +14,13 @@ import {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  // <div>
-  //   <CloudinaryContext cloudName="dtrzaq4sl">
-      
-      <ContextProvider>
-       {/* <div>
-        <Image publicId="sample" width="50" />
-      </div>
-       <Image publicId="sample" width="0.5" /> */}
-        <BrowserRouter>
-          <App />
-
+  <CloudinaryContext cloudName="dtrzaq4sl">
+    <ContextProvider>
+      <BrowserRouter>
+        <App />
       </BrowserRouter>
     </ContextProvider>
-  </CloudinaryContext>
+  </CloudinaryContext >
 
 );
 
@@ -43,4 +36,4 @@ reportWebVitals();
   </div>
   <Image publicId="sample" width="0.5" />
 </CloudinaryContext>
-
+*/

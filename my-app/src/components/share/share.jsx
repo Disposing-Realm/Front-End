@@ -70,12 +70,10 @@ export default function Share(props) {
     const uploadImage = async (files, description) => {
         const httpLink = []
         // const filesCompressed = files.map((ele) => resizeFile(ele))
-        
-        
+
+
         for (let i = 0; i < files.length; i++) {
             // const filesCompressed = await resizeFile(files[i])
-
-
             const formData = new FormData()
             formData.append("file", files[i])
             formData.append("upload_preset", "tdfjlobt")
@@ -85,9 +83,9 @@ export default function Share(props) {
             )
             let newUrl = response.data.secure_url
             newUrl = newUrl.slice(newUrl.length - 4, newUrl.length) === "heic" ? newUrl.slice(0, newUrl.length - 4) + "jpg" :
-            newUrl
-            
-            
+                newUrl
+
+
             httpLink.push(newUrl)
         }
 
@@ -114,7 +112,7 @@ export default function Share(props) {
     }
 
     return (
-        <form onSubmit={(e) => {
+        <form id="submit-form" onSubmit={(e) => {
             e.preventDefault()
             uploadImage(e.target[0].files, e.target[1].value)
         }
@@ -132,7 +130,7 @@ export default function Share(props) {
             {/* <button onClick={uploadImage}>Upload Image</button> */}
 
             {/* <input onChange={handleImageInput} type="text" id="img-text" name="search" size="35" placeholder="Upload Image Url" required /> */}
-            <input /*onChange={handleInputChange}*/ type="text" id="post-text" name="search" size="35" placeholder="What do you want to post" required />
+            <input /*onChange={handleInputChange}*/autocomplete = "off" type="text" id="post-text" name="search" size="35" placeholder="What do you want to post" required />
             {/* <button onClick={uploadImage} type="submit" value="Submit" id="submit-button-post">Post</button> */}
             <br />
             <input type="submit" />

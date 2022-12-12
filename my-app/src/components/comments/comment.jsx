@@ -6,16 +6,16 @@ export default function Comments(props) {
     const userInfo = useContext(AppContext)
     const [comment, setComment] = useState([])
 
-        useEffect(() => {
-            const getUrl = 'http://localhost:3001/comments';
-            async function fetchPost() {
-                const response = await fetch(getUrl);
-                const commentData = await response.json();
-                setComment(commentData);
-            }
-            fetchPost();
-            console.log(userInfo)
-        }, []);
+        // useEffect(() => {
+        //     const getUrl = 'http://localhost:3001/comments';
+        //     async function fetchPost() {
+        //         const response = await fetch(getUrl);
+        //         const commentData = await response.json();
+        //         setComment(commentData);
+        //     }
+        //     fetchPost();
+        //     console.log(userInfo)
+        // }, []);
     
     return (
         <div>
@@ -32,7 +32,7 @@ export default function Comments(props) {
             <div className="write-comment-section">
                 <form>
                     <div className="comment-bar">
-                        <input type="text" className="comment-text" name="search" size="35" placeholder= "Write a comment..." required
+                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder= "Write a comment..." required
                             id="commentPost" />
                         <button className="submit-comment-button">Post Comment</button>
                     </div>
