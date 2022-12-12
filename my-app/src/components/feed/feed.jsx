@@ -3,7 +3,7 @@ import "./feed.css";
 import Share from "../share/share.jsx";
 import Posts from "../post/post.jsx";
 import AppContext from "../../context/appContext.jsx";
-import Resizer from "react-image-file-resizer"
+// import Resizer from "react-image-file-resizer"
 
 function Feed() {
     const [posts, setPosts] = useState([]);
