@@ -29,6 +29,7 @@ function Feed() {
                     key={i + 1}
                     description={ele.post_description}
                     image={ele.post_image}
+                    image2={ele.post_image2}
                 />
             )}
         </div>

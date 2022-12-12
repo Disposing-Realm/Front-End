@@ -12,9 +12,22 @@
     margin-top: 50px;
 }
 
-#posted-image{
-    width: 80%;
-    height: 80%;
+.image-container{
+    display:flex;
+    margin-bottom: 5%;
+    gap: 10px;
+    background-color: green;
+    width: 96%;
+    height:300px;
+    border-radius: 10px;
+}
+
+.posted-image{
+    width: 45%;
+    height: 50%;
+    border-radius: 15%;
+    /* margin-left: 6%;
+    margin-right: 3%; */
 }
 .post-info {
     /* display:flex; */

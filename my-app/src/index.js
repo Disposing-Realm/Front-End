@@ -11,17 +11,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CloudinaryContext cloudName="dtrzaq4sl">
     <ContextProvider>
-
-    <BrowserRouter>
-    <App/>
-    </BrowserRouter>
-  </ContextProvider>
-
       <BrowserRouter>
-          <App />
+        <App />
       </BrowserRouter>
     </ContextProvider>
-  </CloudinaryContext>
+  </CloudinaryContext >
 
 );
 
