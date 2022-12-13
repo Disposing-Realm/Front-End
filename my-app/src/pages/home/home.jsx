@@ -28,7 +28,11 @@ export default function Home(/*{setAuth}*/) {
         <p>According to the New York Times, despite the efforts of Bill de Blasio, New York City gernerates more trash than it did over 5 years ago. </p>
       </div>
       <Footer/>
-      
+    {/* last comment below */}
+    </>
+  )
+}
+
       
       {/* <div className="homeContainer">
 
@@ -36,6 +40,3 @@ export default function Home(/*{setAuth}*/) {
           <Feed key={user.user_id} userInfo={user}/>
           <Rightbar/>
         </div> */}
-    </>
-  )
-}

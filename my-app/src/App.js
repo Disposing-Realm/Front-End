@@ -8,8 +8,9 @@ import { Login } from "./pages/register/login.js";
 import { Register } from "./pages/register/register.jsx"
 import { UserProvider } from "./context/userContext";
 import Navbar from './components/top/navbar.jsx';
-
+import Background  from './background/background.js';
 import 'bulma/css/bulma.css';
+// import { Leaderboard } from './pages/leaderboard/leaderboard.js';
 
 const styles = {
   fontFamily: 'sans-serif',
@@ -19,22 +20,22 @@ const styles = {
 const pages = ['about', 'contact', 'sitemap'];
 const App = () => {
 
-// function App() {
-//   const [currForm, setCurrForm] = useState('login')
-//   const toggleForm = (formName) => {
-//     setCurrForm(formName)
-//   }
+  // function App() {
+  //   const [currForm, setCurrForm] = useState('login')
+  //   const toggleForm = (formName) => {
+  //     setCurrForm(formName)
+  //   }
 
   return (
     <>
       <UserProvider>
-  
       </UserProvider>
       <Routes>
         <Route path="/landing" element={<Landing />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register/>} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/profile" element={<></>} />
       </Routes>
     </>
