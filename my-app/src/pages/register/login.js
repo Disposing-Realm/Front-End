@@ -52,7 +52,7 @@ export const Login = (props) => {
             <div class="user-box">
               <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" required></input>
               <label for="password"> Password </label>
-              <button id = "a" onSubmit={handleSubmit}>
+              <button id = "a" onClick={handleSubmit}>
               <span></span>
               <span></span>
               <span></span>

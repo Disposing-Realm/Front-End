@@ -15,9 +15,11 @@ figure {
     height: 500px;
 }
 
-.logo{
-    padding-right: 59%;
-    padding-top: 1.2%;
+#logo{
+    font-family: klavika;
+    font-size: 40px;
+    font-weight: 500;
+    color: green;
 }
 
 .links{
