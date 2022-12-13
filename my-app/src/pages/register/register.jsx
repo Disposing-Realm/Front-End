@@ -3,7 +3,7 @@ import NavBar from "../../components/top/navbar.jsx";
 import { React, useState } from "react";
 import { redirect, useNavigate } from "react-router-dom";
 
-export const Register = (props) => {
+export default function Register(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");

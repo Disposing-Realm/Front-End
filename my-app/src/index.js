@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-// import App from "./App";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ContextProvider from "./context/contextProvider";
 import { CloudinaryContext } from "cloudinary-react";
@@ -17,12 +17,12 @@ const styles = {
   textAlign: 'center',
 };
 
-const pages = ['about', 'contact', 'sitemap'];
-const App = () => (
-  <div style={styles}>
-    <Navbar pages={pages} />
-  </div>
-);
+// const pages = ['about', 'contact', 'sitemap'];
+// const App = () => (
+//   <div style={styles}>
+//     <Navbar pages={pages} />
+//   </div>
+// );
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -74,8 +74,8 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-      <Background>
-      </Background>
+      {/* <Background>
+      </Background> */}
     </>
   )
 }

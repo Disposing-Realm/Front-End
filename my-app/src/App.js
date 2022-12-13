@@ -5,12 +5,12 @@ import Landing from "./pages/landing/landing.jsx"
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { React, useState, useEffect } from "react";
 import { Login } from "./pages/register/login.js";
-import { Register } from "./pages/register/register.jsx"
+import Register from "./pages/register/register.jsx"
 import { UserProvider } from "./context/userContext";
 import Navbar from './components/top/navbar.jsx';
-import Background  from './background/background.js';
+import Background from './background/background.js';
 import 'bulma/css/bulma.css';
-// import { Leaderboard } from './pages/leaderboard/leaderboard.js';
+import Leaderboard from "./pages/leaderboard/leaderboard.jsx";
 
 const styles = {
   fontFamily: 'sans-serif',
@@ -28,16 +28,28 @@ const App = () => {
 
   return (
     <>
-      <UserProvider>
-      </UserProvider>
-      <Routes>
-        <Route path="/landing" element={<Landing />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
-        <Route path="/profile" element={<></>} />
-      </Routes>
+        <UserProvider>
+        </UserProvider>
+        <Routes>
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/profile" element={<></>} />
+        </Routes>
+        {/* <ul class="circles">
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
+        </ul> */}
     </>
   );
 }
