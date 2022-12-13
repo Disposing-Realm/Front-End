@@ -29,14 +29,5 @@ export default function Comments(props) {
                     </div>
                 </div>
             </div>
-            <div className="write-comment-section">
-                <form>
-                    <div className="comment-bar">
-                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder= "Write a comment..." required
-                            id="commentPost" />
-                        <button className="submit-comment-button">Post Comment</button>
-                    </div>
-                </form>
-            </div>
         </div>
         )}

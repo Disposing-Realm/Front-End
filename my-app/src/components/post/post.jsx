@@ -3,16 +3,46 @@ import "./post.css";
 import { Link } from "react-router-dom";
 import AppContext from "../../context/appContext.jsx";
 import Comments from "../comments/comment.jsx";
+import { UserContext } from "../../context/userContext";
 
 
 export default function Posts(props) {
     // const [like, setLike] = useState(post.like_count);
     // const [isLiked, setIsLiked] = useState(false);
     // const [isBookmarked, setIsBookmarked] = useState(false);
-    // const [comments, setComments] = useState([]);
     // const [reply, setReply] = useState("");
     // const [showComment, setShowComment] = useState(false);
     const { user } = useContext(AppContext)
+    const realUser = useContext(UserContext)
+    const [comments, setComments] = useState([]);
+    const [newComments, setNewComments] = useState([])
+    console.log(props.post_id)
+
+    // useEffect(() => {
+    //     const handleComment = async () => {
+    //         const postInfo = {
+            
+    //         };
+    //         const result = await fetch("http://localhost:3001/comments/new-comment", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify(postInfo),
+    //         });
+    //     }
+    //     handleComment()
+    // }, [comments]);
+
+    useEffect(() => {
+        const getUrl = `http://localhost:3001/comments/${props.post_id}`;
+        async function fetchComments() {
+            const response = await fetch(getUrl);
+            const commentData = await response.json();
+            setComments( commentData);
+        }
+        fetchComments();
+    }, []); 
 
     return (
         <div className="post">
@@ -42,7 +72,24 @@ export default function Posts(props) {
                     <p className="comment-button">Comment</p>
                 </div>
             </div>
-            <Comments />
+            {/* <Comments/> */}
+            {comments.map((ele, i) =>
+                <Comments
+                    key={i + 1}
+                    description={ele.post_description}
+                    image={ele.post_image}
+                    image2={ele.post_image2}
+                />
+            )}
+            <div className="write-comment-section">
+                <form>
+                    <div className="comment-bar">
+                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder= "Write a comment..." required
+                            id="commentPost" />
+                        <button className="submit-comment-button">Post Comment</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }

@@ -16,11 +16,11 @@ export default function NavBar() {
 
   return (
     <>
-  
+
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a>
-            <Link to="/">
+            <Link to="/home">
               <figure class="image is-96x96">
                 <img src={require('./dp.png')} />
               </figure>
@@ -36,9 +36,11 @@ export default function NavBar() {
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
-              Home
-            </a>
+            <Link to="/home">
+              <a class="navbar-item">
+                Home
+              </a>
+            </Link>
 
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
@@ -63,12 +65,16 @@ export default function NavBar() {
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                  Log in
-                </a>
+                <Link to="/register">
+                  <a class="button is-primary">
+                    <strong>Sign up</strong>
+                  </a>
+                </Link>
+                <Link to="/login">
+                  <a class="button is-light">
+                    Log in
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
