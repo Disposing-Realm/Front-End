@@ -1,14 +1,14 @@
 import { React, useState, useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import { useNavigate } from "react-router-dom";
-
-
+import "./form.css"
+import Navbar from "../../components/top/navbar"
 export const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
-  
+
   const sendCredentials = (email, password) => {
     
 
@@ -39,16 +39,38 @@ export const Login = (props) => {
 
 
   return (
-    <div >
-    <form onSubmit = {handleSubmit}>
-      <label for = "email"> Email </label>
-      <input value = {email} onChange = {(e) => setEmail(e.target.value)} type = "email" placeholder = "Insert email"></input>
-      <label for = "password"> Password </label>
-      <input value = {password} onChange = {(e) => setPassword(e.target.value)} type = "password" placeholder = "******"></input>
-      <button type = "submit"> Log In </button>
-    </form>
-    </div>
-
+    <>
+      <Navbar></Navbar>
+      <div id="body">
+        <div class="login-box">
+          <h2>Login</h2>
+          <form>
+            <div class="user-box">
+              <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" required></input>
+              <label for="email"> Email </label>
+            </div>
+            <div class="user-box">
+              <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" required></input>
+              <label for="password"> Password </label>
+              <button id = "a" onSubmit={handleSubmit}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Log in
+            </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
   )
-
 }
+
+{/* <form onSubmit = {handleSubmit}>
+<label for = "email"> Email </label>
+<input value = {email} onChange = {(e) => setEmail(e.target.value)} type = "email" placeholder = "Insert email"></input>
+<label for = "password"> Password </label>
+<input value = {password} onChange = {(e) => setPassword(e.target.value)} type = "password" placeholder = "******"></input>
+<button type = "submit"> Log In </button>
+</form> */}

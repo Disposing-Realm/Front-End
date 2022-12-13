@@ -8,7 +8,6 @@ import { Login } from "./pages/register/login.js";
 import Register from "./pages/register/register.jsx"
 import { UserProvider } from "./context/userContext";
 import Navbar from './components/top/navbar.jsx';
-import Background from './background/background.js';
 import 'bulma/css/bulma.css';
 import Leaderboard from "./pages/leaderboard/leaderboard.jsx";
 
@@ -38,18 +37,6 @@ const App = () => {
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/profile" element={<></>} />
         </Routes>
-        {/* <ul class="circles">
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-        </ul> */}
     </>
   );
 }

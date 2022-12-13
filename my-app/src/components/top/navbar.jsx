@@ -3,7 +3,6 @@ import { UserContext } from "../../context/userContext";
 import { Link } from "react-router-dom";
 import { Nav } from "react-router-dom";
 import { redirect } from "react-router-dom";
-import Background from "../../background/background.js"
 import AppContext from "../../context/appContext";
 import "./navbar.css"
 import Leaderboard from "../../pages/leaderboard/leaderboard";
@@ -20,27 +19,21 @@ export default function NavBar() {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a>
-            <Link to="/home">
-              <figure className="image is-96x96">
-                <img src={require('./dp.png')} />
-              </figure>
+
+            <Link to="/landing">
+              <img src={require('./drText.png')} />
             </Link>
           </a>
-
-          <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
 
-        <div id="navbarBasicExample" className="navbar-menu">
-          <div className="navbar-start">
-            <Link to="/home">
-              <a className="navbar-item">
-                Home
-              </a>
-            </Link>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
 
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link">
@@ -55,25 +48,28 @@ export default function NavBar() {
                   Profile
                 </a>
                 <Link to="/leaderboard">
-                  <div className="linkers"> LeaderBoard</div>
+                <a class="navbar-item">
+                  Leaderboard
+                </a>
                 </Link>
                 <hr className="navbar-divider" />
               </div>
             </div>
           </div>
 
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <Link to="/register">
-                  <a className="button is-primary">
-                    <strong>Sign up</strong>
-                  </a>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+              <Link to="/register">
+                <a class="button is-primary">
+                  <strong>Register</strong>
+                </a>
                 </Link>
                 <Link to="/login">
-                  <a className="button is-light">
-                    Log in
-                  </a>
+                <a class="button is-light">
+                  Log in
+                </a>
                 </Link>
               </div>
             </div>
