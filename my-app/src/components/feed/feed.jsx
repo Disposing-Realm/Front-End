@@ -19,6 +19,7 @@ function Feed() {
         }
         fetchPost();
     }, [userInfo.submitText]); 
+    console.log(posts)
 
 
     return (
@@ -30,6 +31,7 @@ function Feed() {
                     description={ele.post_description}
                     image={ele.post_image}
                     image2={ele.post_image2}
+                    post_id={ele.post_id}
                 />
             )}
         </div>

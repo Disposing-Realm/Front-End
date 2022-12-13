@@ -15,10 +15,11 @@ export default function NavBar() {
 
   return (
     <>
-  
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
+
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
           <a>
+
             <Link to="/landing">
               <img src={require('./drText.png')} />
             </Link>
@@ -30,19 +31,20 @@ export default function NavBar() {
           </a>
         </div>
 
+
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
 
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">
                 More
               </a>
 
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
+              <div className="navbar-dropdown">
+                <a className="navbar-item">
                   About
                 </a>
-                <a class="navbar-item">
+                <a className="navbar-item">
                   Profile
                 </a>
                 <Link to="/leaderboard">
@@ -50,10 +52,11 @@ export default function NavBar() {
                   Leaderboard
                 </a>
                 </Link>
-                <hr class="navbar-divider" />
+                <hr className="navbar-divider" />
               </div>
             </div>
           </div>
+
 
           <div class="navbar-end">
             <div class="navbar-item">

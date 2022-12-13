@@ -10,7 +10,7 @@ export const Login = (props) => {
   const navigate = useNavigate();
 
   const sendCredentials = (email, password) => {
-    debugger
+    
 
     fetch("http://localhost:3001/users/login", {
       method: "POST",

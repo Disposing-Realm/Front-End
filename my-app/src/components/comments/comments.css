@@ -3,6 +3,10 @@
     margin:auto;
 }
 
+.comments-section{
+    width:80%;
+}
+
 .comment-box {
     margin-top: 2%;
     background-color: #07C57F;
