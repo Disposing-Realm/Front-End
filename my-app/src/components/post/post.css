@@ -16,14 +16,14 @@
     display:flex;
     margin-bottom: 5%;
     gap: 10px;
-    background-color: green;
+    /* background-color: green; */
     width: 96%;
-    height:300px;
+    height:100%;
     border-radius: 10px;
 }
 
 .posted-image{
-    width: 45%;
+    width: 48%;
     height: 50%;
     border-radius: 15%;
     /* margin-left: 6%;

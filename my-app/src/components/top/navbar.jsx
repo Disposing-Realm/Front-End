@@ -17,61 +17,61 @@ export default function NavBar() {
   return (
     <>
 
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
           <a>
             <Link to="/home">
-              <figure class="image is-96x96">
+              <figure className="image is-96x96">
                 <img src={require('./dp.png')} />
               </figure>
             </Link>
           </a>
 
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
+        <div id="navbarBasicExample" className="navbar-menu">
+          <div className="navbar-start">
             <Link to="/home">
-              <a class="navbar-item">
+              <a className="navbar-item">
                 Home
               </a>
             </Link>
 
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a className="navbar-link">
                 More
               </a>
 
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
+              <div className="navbar-dropdown">
+                <a className="navbar-item">
                   About
                 </a>
-                <a class="navbar-item">
+                <a className="navbar-item">
                   Profile
                 </a>
                 <Link to="/leaderboard">
                   <div className="linkers"> LeaderBoard</div>
                 </Link>
-                <hr class="navbar-divider" />
+                <hr className="navbar-divider" />
               </div>
             </div>
           </div>
 
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
                 <Link to="/register">
-                  <a class="button is-primary">
+                  <a className="button is-primary">
                     <strong>Sign up</strong>
                   </a>
                 </Link>
                 <Link to="/login">
-                  <a class="button is-light">
+                  <a className="button is-light">
                     Log in
                   </a>
                 </Link>

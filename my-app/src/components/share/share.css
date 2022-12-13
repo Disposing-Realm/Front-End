@@ -7,5 +7,16 @@
     margin-top: 30px;
     display:flex;
     flex-direction: column;
-    width:40%;
+    width:47%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+#descript{
+    border-radius: 6px;
+    height:30%;
+}
+
+#submit-button{
+    width:20%;
 }

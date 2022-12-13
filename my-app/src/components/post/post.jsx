@@ -7,32 +7,33 @@ import { UserContext } from "../../context/userContext";
 
 
 export default function Posts(props) {
-    // const [like, setLike] = useState(post.like_count);
-    // const [isLiked, setIsLiked] = useState(false);
-    // const [isBookmarked, setIsBookmarked] = useState(false);
-    // const [reply, setReply] = useState("");
-    // const [showComment, setShowComment] = useState(false);
     const { user } = useContext(AppContext)
     const realUser = useContext(UserContext)
     const [comments, setComments] = useState([]);
     const [newComments, setNewComments] = useState([])
-    console.log(props.post_id)
+    const [likes, setLikes] = useState(0)
+    const [trackLikes, setTrackLikes] = useState(0)
+    console.log(comments)
 
-    // useEffect(() => {
-    //     const handleComment = async () => {
-    //         const postInfo = {
+
+        const handleComment = async (commentStr) => {
             
-    //         };
-    //         const result = await fetch("http://localhost:3001/comments/new-comment", {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify(postInfo),
-    //         });
-    //     }
-    //     handleComment()
-    // }, [comments]);
+            const postInfo = {
+                post_id: props.post_id,
+                commentary: commentStr
+            };
+            const result = await fetch("http://localhost:3001/comments/new-comment", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(postInfo),
+            });
+            const parsed = await result.json()
+            setNewComments(parsed)
+            console.log(parsed)
+        }
+
 
     useEffect(() => {
         const getUrl = `http://localhost:3001/comments/${props.post_id}`;
@@ -42,7 +43,18 @@ export default function Posts(props) {
             setComments( commentData);
         }
         fetchComments();
-    }, []); 
+    }, [newComments]); 
+
+
+    // const handleLikes = async () => {
+    //     setLikes(likes => likes + 1)
+    //     // setTrackLikes(trackLikes => trackLikes + 1)
+    // }
+
+    // useEffect(() => {
+    //     setLikes(trackLikes)
+    // }, [trackLikes])
+
 
     return (
         <div className="post">
@@ -66,7 +78,7 @@ export default function Posts(props) {
 
             <div className="like-comment-button-section">
                 <div className="like-button-container">
-                    <p className="like-button">Like</p>
+                    <p /*onClick={handleLikes()}*/ className="like-button">Like</p>
                 </div>
                 <div className="comment-button-container">
                     <p className="comment-button">Comment</p>
@@ -76,13 +88,14 @@ export default function Posts(props) {
             {comments.map((ele, i) =>
                 <Comments
                     key={i + 1}
-                    description={ele.post_description}
-                    image={ele.post_image}
-                    image2={ele.post_image2}
+                    comments={ele.commentary}
                 />
             )}
             <div className="write-comment-section">
-                <form>
+                <form onSubmit={(e) => {
+                    e.preventDefault()
+                    handleComment(e.target[0].value)
+                }}>
                     <div className="comment-bar">
                         <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder= "Write a comment..." required
                             id="commentPost" />
