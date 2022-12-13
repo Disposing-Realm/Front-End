@@ -3,6 +3,7 @@ import { React, useState } from "react";
 import { redirect, useNavigate } from "react-router-dom";
 import Navbar from "../../components/top/navbar"
 import "./form.css"
+import {Link} from "react-router-dom"
 
 export default function Register(props) {
   const [email, setEmail] = useState("");
@@ -31,6 +32,7 @@ export default function Register(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    console.log("submit is working")
     registerUser();
     navigate("/login");
 
@@ -65,7 +67,7 @@ export default function Register(props) {
                 <input value={password} onChange={(e) => setPassword(e.target.value)} type="password"  required></input>
                 <label for="password"> Password </label>
               </div>
-              <button id ="a" onSubmit={handleSubmit}>
+              <button id ="a" onClick={handleSubmit}>
                 <span></span>
                 <span></span>
                 <span></span>

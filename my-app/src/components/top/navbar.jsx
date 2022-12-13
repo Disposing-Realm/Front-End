@@ -21,7 +21,9 @@ export default function NavBar() {
           <a>
 
             <Link to="/landing">
-              <img src={require('./drText.png')} />
+              <div id="logo">
+                Disposing Realm
+              </div>
             </Link>
           </a>
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
