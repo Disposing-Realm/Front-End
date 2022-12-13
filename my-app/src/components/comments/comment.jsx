@@ -18,25 +18,16 @@ export default function Comments(props) {
         // }, []);
     
     return (
-        <div>
+        <>
             <div className="comments-section">
                 <div className="comment-box">
                     <div className="commenter-name">
-                        <p className="username-text">username<br/></p>
+                        <p className="username-text">Delvin Reyes<br/></p>
                     </div>
                     <div className="commenter-comment">
-                        <p className="commenter-comment-text">This is my comment</p>
+                        <p className="commenter-comment-text">{props.comments}</p>
                     </div>
                 </div>
             </div>
-            <div className="write-comment-section">
-                <form>
-                    <div className="comment-bar">
-                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder= "Write a comment..." required
-                            id="commentPost" />
-                        <button className="submit-comment-button">Post Comment</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        </>
         )}
