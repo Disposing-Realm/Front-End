@@ -1,10 +1,13 @@
 import "./leaderboard.css"
+import NavBar from "../../components/top/navbar.jsx"
 
 
 
 
 export default function Leaderboard() {
     return (
+        <>
+            <NavBar />
             <div id="html">
                 <div id="body">
                     <div class="screen">
@@ -21,7 +24,7 @@ export default function Leaderboard() {
                                 <div id="hof-box">
                                     <h1 class="hof">Leaderboard</h1>
                                 </div>
-                                <tr id = "ranker">
+                                <tr id="ranker">
                                     <th>Rank</th>
                                     <th>SCORE</th>
                                     <th>NAME</th>
@@ -56,5 +59,6 @@ export default function Leaderboard() {
                     </div>
                 </div>
             </div>
+        </>
     )
 }
