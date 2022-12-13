@@ -20,7 +20,7 @@ export default function NavBar() {
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a>
-            <Link to="/">
+            <Link to="/landing">
               <figure class="image is-96x96">
                 <img src={require('./dp.png')} />
               </figure>
@@ -63,12 +63,16 @@ export default function NavBar() {
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
+              <Link to="/register">
                 <a class="button is-primary">
-                  <strong>Sign up</strong>
+                  <strong>Register</strong>
                 </a>
+                </Link>
+                <Link to="/login">
                 <a class="button is-light">
                   Log in
                 </a>
+                </Link>
               </div>
             </div>
           </div>
