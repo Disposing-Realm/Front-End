@@ -3,7 +3,6 @@ import { UserContext } from "../../context/userContext";
 import { Link } from "react-router-dom";
 import { Nav } from "react-router-dom";
 import { redirect } from "react-router-dom";
-import Background from "../../background/background.js"
 import AppContext from "../../context/appContext";
 import "./navbar.css"
 import Leaderboard from "../../pages/leaderboard/leaderboard";
@@ -21,12 +20,9 @@ export default function NavBar() {
         <div class="navbar-brand">
           <a>
             <Link to="/landing">
-              <figure class="image is-96x96">
-                <img src={require('./dp.png')} />
-              </figure>
+              <img src={require('./drText.png')} />
             </Link>
           </a>
-
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -36,9 +32,6 @@ export default function NavBar() {
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
-              Home
-            </a>
 
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
@@ -53,7 +46,9 @@ export default function NavBar() {
                   Profile
                 </a>
                 <Link to="/leaderboard">
-                  <div className="linkers"> LeaderBoard</div>
+                <a class="navbar-item">
+                  Leaderboard
+                </a>
                 </Link>
                 <hr class="navbar-divider" />
               </div>

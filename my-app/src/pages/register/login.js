@@ -43,7 +43,7 @@ export const Login = (props) => {
       <Navbar></Navbar>
       <div id="body">
         <div class="login-box">
-          <h2>Register</h2>
+          <h2>Login</h2>
           <form>
             <div class="user-box">
               <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" required></input>

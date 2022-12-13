@@ -3,7 +3,9 @@
     padding: auto;
 }
 
-
+figure {
+    display:flex
+}
 .navbar-items {
     display: flex;
     background-color: #0D2129;

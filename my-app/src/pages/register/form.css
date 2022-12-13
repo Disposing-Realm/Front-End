@@ -18,6 +18,9 @@ background: linear-gradient(354deg, rgba(9,251,132,1) 0%, rgba(103,238,132,1) 30
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
 }
+img {
+    padding:0px 10px 10px;
+}
 
 .login-box h2 {
     margin: 0 0 30px;

@@ -41,6 +41,9 @@ export default function Register(props) {
       <Navbar></Navbar>
       <div id="body">
         <div class="login-box">
+        <br></br>
+        <br></br>
+        <br></br>
           <h2>Register</h2>
           <form>
             <div class="user-box">

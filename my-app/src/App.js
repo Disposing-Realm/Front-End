@@ -8,7 +8,6 @@ import { Login } from "./pages/register/login.js";
 import Register from "./pages/register/register.jsx"
 import { UserProvider } from "./context/userContext";
 import Navbar from './components/top/navbar.jsx';
-import Background from './background/background.js';
 import 'bulma/css/bulma.css';
 import Leaderboard from "./pages/leaderboard/leaderboard.jsx";
 
