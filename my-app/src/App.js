@@ -38,18 +38,6 @@ const App = () => {
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/profile" element={<></>} />
         </Routes>
-        {/* <ul class="circles">
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-                <li><img src="https://agwaterexchange.com/wp-content/uploads/2016/03/recycling-logo.png"alt="recycle"/></li>
-        </ul> */}
     </>
   );
 }
