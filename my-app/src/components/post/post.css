@@ -5,11 +5,12 @@
 .post {
     display: flex;
     flex-direction: column;
-    background-color: #f8f1ff;
+    background-color: gainsboro;
     width: 50%;
     height: 60%;
     border-radius: 25px;
     margin-top: 50px;
+
 }
 
 .image-container{
@@ -25,19 +26,19 @@
 .posted-image{
     width: 48%;
     height: 50%;
-    border-radius: 15%;
-    opacity: 1;
-    animation: fadeOutImage 5s linear infinite alternate;
+    border-radius: 10%;
+    /* opacity: 1; */
+    /* animation: fadeOutImage 5s linear infinite alternate; */
 
 }
-@keyframes fadeOutImage{
+/* @keyframes fadeOutImage{
     0%{
         opacity: 1;
     }
     100%{
         opacity: 0;
     }
-}
+} */
 .post-info {
     /* display:flex; */
     flex-direction: column;
@@ -74,11 +75,12 @@
     margin:3px;
     font-size:14px;
 }
-/* .post-content {
-    width: 70%;
-    padding:5%;
+.post-content {
+    width:80%;
+    border-top: solid black;
+
     border-bottom: solid black;
-} */
+}
 .post-content-text {
     text-align: left;
     font-size: 24px;
@@ -117,7 +119,7 @@
 .comment-button:hover {
     width: 30px;
     height: 30px;
-    background-color:red;
+    background-color:cyan;
 }
 .comments-section{
     width: 80%;
