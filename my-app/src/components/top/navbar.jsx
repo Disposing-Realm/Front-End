@@ -26,7 +26,7 @@ export default function NavBar() {
               </div>
             </Link>
           </a>
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -34,8 +34,8 @@ export default function NavBar() {
         </div>
 
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
+        <div id="navbarBasicExample" className="navbar-menu">
+          <div className="navbar-start">
 
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link">
@@ -50,7 +50,7 @@ export default function NavBar() {
                   Profile
                 </a>
                 <Link to="/leaderboard">
-                <a class="navbar-item">
+                <a className="navbar-item">
                   Leaderboard
                 </a>
                 </Link>
@@ -60,16 +60,16 @@ export default function NavBar() {
           </div>
 
 
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
               <Link to="/register">
-                <a class="button is-primary">
+                <a className="button is-primary">
                   <strong>Register</strong>
                 </a>
                 </Link>
                 <Link to="/login">
-                <a class="button is-light">
+                <a className="button is-light">
                   Log in
                 </a>
                 </Link>

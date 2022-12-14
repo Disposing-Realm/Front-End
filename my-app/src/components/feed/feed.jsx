@@ -8,6 +8,7 @@ import AppContext from "../../context/appContext.jsx";
 function Feed() {
     const [posts, setPosts] = useState([]);
     const [newPost, setNewPost] = useState([])
+    const [userHere, setNewUser] = useState([])
     const userInfo = useContext(AppContext)
     useEffect(() => {
         const getUrl = 'http://localhost:3001/posts/feed';
@@ -18,9 +19,18 @@ function Feed() {
         }
         fetchPost();
     }, [userInfo.submitText]); 
-    console.log(posts)
 
-
+    async function fetchUsers() {
+        const response = await fetch('http://localhost:3001/users');
+        const postData = await response.json();
+        console.log(postData[postData.length - 1])
+        setNewUser(postData[postData.length - 1])
+    }
+    
+    useEffect(() => {
+        fetchUsers(); 
+    }, [])  
+    console.log(userHere) 
     return (
         <div>
             <Share setNewPost={setNewPost} newPost={newPost}/>
@@ -32,8 +42,6 @@ function Feed() {
                     image2={ele.post_image2}
                     post_id={ele.post_id}
                     post_date={ele.post_date}
-
-
                 />
             )}
         </div>

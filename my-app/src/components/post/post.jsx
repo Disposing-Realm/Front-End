@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import AppContext from "../../context/appContext.jsx";
 import Comments from "../comments/comment.jsx";
 import { UserContext } from "../../context/userContext";
+import { AiFillHeart } from 'react-icons/ai';
+import { BiCommentDetail } from "react-icons/bi"
 
 
 export default function Posts(props) {
-    // console.log(props)
     const { user } = useContext(AppContext)
     const realUser = useContext(UserContext)
     const [comments, setComments] = useState([]);
@@ -24,8 +25,7 @@ export default function Posts(props) {
         if (hour < 0) {
             hour = 24 - hour
         }
-        console.log({ hour })
-        console.log({ time })
+
         if (hour > 12) {
             returnedTime = `${hour - 12}${time.slice(2, 5)}pm`
             return returnedTime
@@ -54,7 +54,6 @@ export default function Posts(props) {
         });
         const parsed = await result.json()
         setNewComments(parsed)
-        console.log(parsed)
     }
 
 
@@ -75,7 +74,7 @@ export default function Posts(props) {
     // }
 
     // useEffect(() => {
-    //     setLikes(trackLikes)
+    //     setLikes( likes += 1)
     // }, [trackLikes])
 
 
@@ -83,7 +82,7 @@ export default function Posts(props) {
         <div className="post">
             <div className="post-info">
                 <div className="username">
-                    <p className="username-text">Evan Lu</p>
+                    <p className="username-text">Dreyes</p>
                     <div className="timestamp">
                         <p className="posts-date">{date}</p>
                         <p className="timestamp-text">{finalTime}</p>
@@ -100,12 +99,16 @@ export default function Posts(props) {
                 <img className="posted-image" src={props.image2}></img>
             </div>
 
+
+            <p className="likes-post">{likes} likes</p>
+
+
             <div className="like-comment-button-section">
                 <div className="like-button-container">
-                    <p /*onClick={handleLikes()}*/ className="like-button">Like</p>
+                    <AiFillHeart onClick={() => { setLikes(likes => likes + 1) }} className="like-button" />
                 </div>
                 <div className="comment-button-container">
-                    <p className="comment-button">Comment</p>
+                    <BiCommentDetail className="comment-button" />
                 </div>
             </div>
             {/* <Comments/> */}
@@ -127,6 +130,8 @@ export default function Posts(props) {
                     </div>
                 </form>
             </div>
+            <script src="https://kit.fontawesome.com/c53ca3821a.js" crossorigin="anonymous"></script>
+
         </div>
     )
 }
