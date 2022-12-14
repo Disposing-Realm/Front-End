@@ -16,20 +16,6 @@ export default function Share(props) {
         const httpLink = []
         const promises = []
 
-        // for (let i = 0; i < files.length; i++) {
-        //     // const filesCompressed = await resizeFile(files[i])
-        //     const formData = new FormData()
-        //     formData.append("file", files[i])
-        //     formData.append("upload_preset", "tdfjlobt")
-        //     const response = await axios.post(
-        //         "https://api.cloudinary.com/v1_1/dtrzaq4sl/image/upload",
-        //         formData
-        //     )
-        //     let newUrl = response.data.secure_url
-        //     newUrl = newUrl.slice(newUrl.length - 4, newUrl.length) === "heic" ? newUrl.slice(0, newUrl.length - 4) + "jpg" : newUrl
-        //     httpLink.push(newUrl)
-        // }
-
         for (let i = 0; i < files.length; i++) {
             // const filesCompressed = await resizeFile(files[i])
             const formData = new FormData()
@@ -46,9 +32,6 @@ export default function Share(props) {
             newUrl = newUrl.slice(newUrl.length - 4, newUrl.length) === "heic" ? newUrl.slice(0, newUrl.length - 4) + "jpg" : newUrl
             httpLink.push(newUrl)
         }
-      
-
-
 
         const postInfo = {
             post_description: description,
@@ -63,11 +46,7 @@ export default function Share(props) {
             },
             body: JSON.stringify(postInfo),
         });
-        // console.log("parsed")
-
         const parsed = await result.json();
-        console.log(parsed[0], "parsed")
-
         props.setNewPost([parsed, ...props.newPost])
         userInfo.getSubmitText(parsed)
     }

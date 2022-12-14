@@ -5,8 +5,8 @@
 .post {
     display: flex;
     flex-direction: column;
-    background-color: gainsboro;
-    width: 50%;
+    background-color: #5df0ce;
+    width: 70%;
     height: 60%;
     border-radius: 25px;
     margin-top: 50px;
@@ -76,10 +76,10 @@
     font-size:14px;
 }
 .post-content {
-    width:80%;
-    border-top: solid black;
+    width:70%;
+    /* border-top: solid black; */
 
-    border-bottom: solid black;
+    /* border-bottom: solid black; */
 }
 .post-content-text {
     text-align: left;
