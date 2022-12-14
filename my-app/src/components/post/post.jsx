@@ -66,14 +66,16 @@ export default function Posts(props) {
                     </div>
                 </div>
             </div>
+           
+            <div className="image-container">
+                <img className="posted-image" src={props.image}></img>
+                <img className="posted-image" src={props.image2}></img>
+            </div>
+
             <div className="post-content">
                 <p className="post-content-text">
                     {props.description}
                 </p>
-            </div>
-            <div className="image-container">
-                <img className="posted-image" src={props.image}></img>
-                <img className="posted-image" src={props.image2}></img>
             </div>
 
             <div className="like-comment-button-section">
