@@ -7,32 +7,55 @@ import { UserContext } from "../../context/userContext";
 
 
 export default function Posts(props) {
+    // console.log(props)
     const { user } = useContext(AppContext)
     const realUser = useContext(UserContext)
     const [comments, setComments] = useState([]);
     const [newComments, setNewComments] = useState([])
     const [likes, setLikes] = useState(0)
     const [trackLikes, setTrackLikes] = useState(0)
-    console.log(comments)
+    let date = props.post_date.slice(5, 10)
 
 
-        const handleComment = async (commentStr) => {
-            
-            const postInfo = {
-                post_id: props.post_id,
-                commentary: commentStr
-            };
-            const result = await fetch("http://localhost:3001/comments/new-comment", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(postInfo),
-            });
-            const parsed = await result.json()
-            setNewComments(parsed)
-            console.log(parsed)
+    const convertTimeZone = (time) => {
+        let hour = +time.slice(0, 2)
+        hour -= 5
+        let returnedTime = 0
+        if (hour < 0) {
+            hour = 24 - hour
         }
+        console.log({ hour })
+        console.log({ time })
+        if (hour > 12) {
+            returnedTime = `${hour - 12}${time.slice(2, 5)}pm`
+            return returnedTime
+        } else {
+            returnedTime = `${hour}${time.slice(2, 5)}am`
+            return returnedTime
+        }
+
+    }
+    let finalTime = convertTimeZone(props.post_date.slice(11, 16))
+
+
+
+    const handleComment = async (commentStr) => {
+
+        const postInfo = {
+            post_id: props.post_id,
+            commentary: commentStr
+        };
+        const result = await fetch("http://localhost:3001/comments/new-comment", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postInfo),
+        });
+        const parsed = await result.json()
+        setNewComments(parsed)
+        console.log(parsed)
+    }
 
 
     useEffect(() => {
@@ -40,10 +63,10 @@ export default function Posts(props) {
         async function fetchComments() {
             const response = await fetch(getUrl);
             const commentData = await response.json();
-            setComments( commentData);
+            setComments(commentData);
         }
         fetchComments();
-    }, [newComments]); 
+    }, [newComments]);
 
 
     // const handleLikes = async () => {
@@ -62,7 +85,8 @@ export default function Posts(props) {
                 <div className="username">
                     <p className="username-text">Evan Lu</p>
                     <div className="timestamp">
-                        <p className="timestamp-text">10 hours ago</p>
+                        <p className="posts-date">{date}</p>
+                        <p className="timestamp-text">{finalTime}</p>
                     </div>
                 </div>
             </div>
@@ -97,7 +121,7 @@ export default function Posts(props) {
                     handleComment(e.target[0].value)
                 }}>
                     <div className="comment-bar">
-                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder= "Write a comment..." required
+                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder="Write a comment..." required
                             id="commentPost" />
                         <button className="submit-comment-button">Post Comment</button>
                     </div>

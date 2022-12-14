@@ -14,22 +14,41 @@ export default function Share(props) {
 
     const uploadImage = async (files, description) => {
         const httpLink = []
-        // const filesCompressed = files.map((ele) => resizeFile(ele))
+        const promises = []
 
+        // for (let i = 0; i < files.length; i++) {
+        //     // const filesCompressed = await resizeFile(files[i])
+        //     const formData = new FormData()
+        //     formData.append("file", files[i])
+        //     formData.append("upload_preset", "tdfjlobt")
+        //     const response = await axios.post(
+        //         "https://api.cloudinary.com/v1_1/dtrzaq4sl/image/upload",
+        //         formData
+        //     )
+        //     let newUrl = response.data.secure_url
+        //     newUrl = newUrl.slice(newUrl.length - 4, newUrl.length) === "heic" ? newUrl.slice(0, newUrl.length - 4) + "jpg" : newUrl
+        //     httpLink.push(newUrl)
+        // }
 
         for (let i = 0; i < files.length; i++) {
             // const filesCompressed = await resizeFile(files[i])
             const formData = new FormData()
             formData.append("file", files[i])
             formData.append("upload_preset", "tdfjlobt")
-            const response = await axios.post(
+            promises.push(await axios.post(
                 "https://api.cloudinary.com/v1_1/dtrzaq4sl/image/upload",
                 formData
-            )
-            let newUrl = response.data.secure_url
+            ))
+        }
+
+        for(let i = 0; i < promises.length; i++) {
+            let newUrl = promises[i].data.secure_url
             newUrl = newUrl.slice(newUrl.length - 4, newUrl.length) === "heic" ? newUrl.slice(0, newUrl.length - 4) + "jpg" : newUrl
             httpLink.push(newUrl)
         }
+      
+
+
 
         const postInfo = {
             post_description: description,
@@ -62,7 +81,7 @@ export default function Share(props) {
             <br />
             <input id="file-input" type="file" multiple />
             <br />
-            <input id="descript" autoComplete="off" type="text"  name="search" size="35" placeholder="What do you want to post" required />
+            <input id="descript" autoComplete="off" type="text" name="search" size="35" placeholder="What do you want to post" required />
             <br />
             <input id="submit-button" type="submit" />
         </form>

@@ -15,7 +15,6 @@ function Feed() {
             const response = await fetch(getUrl);
             const postData = await response.json();
             setPosts( postData);
-            console.log("this is happening")
         }
         fetchPost();
     }, [userInfo.submitText]); 
@@ -32,6 +31,9 @@ function Feed() {
                     image={ele.post_image}
                     image2={ele.post_image2}
                     post_id={ele.post_id}
+                    post_date={ele.post_date}
+
+
                 />
             )}
         </div>
