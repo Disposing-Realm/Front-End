@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import AppContext from "../../context/appContext.jsx";
 import Comments from "../comments/comment.jsx";
 import { UserContext } from "../../context/userContext";
+import { AiFillHeart } from 'react-icons/ai';
+import { BiCommentDetail } from "react-icons/bi"
 
 
 export default function Posts(props) {
@@ -13,26 +15,46 @@ export default function Posts(props) {
     const [newComments, setNewComments] = useState([])
     const [likes, setLikes] = useState(0)
     const [trackLikes, setTrackLikes] = useState(0)
-    console.log(comments)
+    let date = props.post_date.slice(5, 10)
 
 
-        const handleComment = async (commentStr) => {
-            
-            const postInfo = {
-                post_id: props.post_id,
-                commentary: commentStr
-            };
-            const result = await fetch("http://localhost:3001/comments/new-comment", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(postInfo),
-            });
-            const parsed = await result.json()
-            setNewComments(parsed)
-            console.log(parsed)
+    const convertTimeZone = (time) => {
+        let hour = +time.slice(0, 2)
+        hour -= 5
+        let returnedTime = 0
+        if (hour < 0) {
+            hour = 24 - hour
         }
+
+        if (hour > 12) {
+            returnedTime = `${hour - 12}${time.slice(2, 5)}pm`
+            return returnedTime
+        } else {
+            returnedTime = `${hour}${time.slice(2, 5)}am`
+            return returnedTime
+        }
+
+    }
+    let finalTime = convertTimeZone(props.post_date.slice(11, 16))
+
+
+
+    const handleComment = async (commentStr) => {
+
+        const postInfo = {
+            post_id: props.post_id,
+            commentary: commentStr
+        };
+        const result = await fetch("http://localhost:3001/comments/new-comment", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postInfo),
+        });
+        const parsed = await result.json()
+        setNewComments(parsed)
+    }
 
 
     useEffect(() => {
@@ -40,10 +62,10 @@ export default function Posts(props) {
         async function fetchComments() {
             const response = await fetch(getUrl);
             const commentData = await response.json();
-            setComments( commentData);
+            setComments(commentData);
         }
         fetchComments();
-    }, [newComments]); 
+    }, [newComments]);
 
 
     // const handleLikes = async () => {
@@ -52,7 +74,7 @@ export default function Posts(props) {
     // }
 
     // useEffect(() => {
-    //     setLikes(trackLikes)
+    //     setLikes( likes += 1)
     // }, [trackLikes])
 
 
@@ -60,9 +82,10 @@ export default function Posts(props) {
         <div className="post">
             <div className="post-info">
                 <div className="username">
-                    <p className="username-text">Evan Lu</p>
+                    <p className="username-text">Dreyes</p>
                     <div className="timestamp">
-                        <p className="timestamp-text">10 hours ago</p>
+                        <p className="posts-date">{date}</p>
+                        <p className="timestamp-text">{finalTime}</p>
                     </div>
                 </div>
             </div>
@@ -78,12 +101,16 @@ export default function Posts(props) {
                 </p>
             </div>
 
+
+            <p className="likes-post">{likes} likes</p>
+
+
             <div className="like-comment-button-section">
                 <div className="like-button-container">
-                    <p /*onClick={handleLikes()}*/ className="like-button">Like</p>
+                    <AiFillHeart onClick={() => { setLikes(likes => likes + 1) }} className="like-button" />
                 </div>
                 <div className="comment-button-container">
-                    <p className="comment-button">Comment</p>
+                    <BiCommentDetail className="comment-button" />
                 </div>
             </div>
             {/* <Comments/> */}
@@ -99,12 +126,14 @@ export default function Posts(props) {
                     handleComment(e.target[0].value)
                 }}>
                     <div className="comment-bar">
-                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder= "Write a comment..." required
+                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder="Write a comment..." required
                             id="commentPost" />
                         <button className="submit-comment-button"> Post Comment</button>
                     </div>
                 </form>
             </div>
+            <script src="https://kit.fontawesome.com/c53ca3821a.js" crossorigin="anonymous"></script>
+
         </div>
     )
 }
