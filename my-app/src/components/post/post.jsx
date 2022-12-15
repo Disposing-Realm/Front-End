@@ -106,10 +106,11 @@ export default function Posts(props) {
                         <p className="timestamp-text">{finalTime}</p>
                     </div>
             <div className="like-comment-button-section">
-                <div className="like-button-container" >
+                <div className="like-button-container" style={{height:"10px"}}>
                     <AiFillHeart onClick={() => { setLikes(likes => likes + 1) }} className="like-button" />
                 </div>
-                <div className="comment-button-container">
+
+                <div className="comment-button-container" style={{height:"10px"}}>
                     <BiCommentDetail onClick={() => {
                         setOpen(!open);
                     }} className="comment-button" />
@@ -122,7 +123,7 @@ export default function Posts(props) {
                     handleComment(e.target[0].value)
                 }}>
                     <div className="comment-bar">
-                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder="Comment..." required
+                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder="Enter Comment..." required
                             id="commentPost" />
                         {/* <button className="submit-comment-button">✩Post Comment✩</button> */}
                     </div>
