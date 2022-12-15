@@ -5,12 +5,14 @@
 .post {
     display: flex;
     flex-direction: column;
-    background-color: #5df0ce;
     width: 70%;
     height: 60%;
     border-radius: 25px;
     margin-top: 50px;
-
+    font-size: 72px;
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    
 }
 
 .image-container{
@@ -58,7 +60,7 @@
 }
 .username-text {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 1000;
     position: relative;
     margin-left: 5%;
 }
@@ -82,10 +84,16 @@
     /* border-bottom: solid black; */
 }
 .post-content-text {
-    text-align: left;
-    font-size: 24px;
+    font-weight: 1000;
+    font-size: 32px;
     margin:auto;
 }
+
+/* .line {
+    border-top: 1px solid black;
+    width:100%
+} */
+
 .likes-post{
     margin-left: 40px;;
 }
@@ -93,11 +101,8 @@
 .like-comment-button-section {
     display: flex;
     width: 90%;
-    color: white;
-    padding-top: .6%;
-    padding-bottom: .7%;
-    height: 42px;
-}
+    color: black;
+}   
 /* .like-button-container{
     background-color: #0D2129;
 } */
@@ -108,8 +113,15 @@
 
 .like-button:hover {
     width: 35px;
-    height: 34px
+    height: 34px;
+    animation-duration: 2s; 
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color:Red
+
 }
+  
 .comment-button {
     width: 25px;
     height: 25px;
@@ -119,16 +131,14 @@
 .comment-button:hover {
     width: 30px;
     height: 30px;
-    background-color:cyan;
 }
+
 .comments-section{
     width: 80%;
  }
 
 
-
 .submit-comment-button {
-
     justify-content: center;
     background-color: 058a59;
     color: #58997A;
@@ -139,5 +149,15 @@
     border-radius: 0px 25px 25px 0px;   
 }
 
+  @keyframes bounce {
+    30% {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7);
+    }
+    0%, 70%, 100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
 
-
+  
