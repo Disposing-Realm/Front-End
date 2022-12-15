@@ -1,36 +1,44 @@
 * {
     padding: auto;
-    margin:auto;
+    margin: auto;
 }
 
-.comments-section{
-    width:80%;
+.comments-section {
+    width: 80%;
 }
 
 .comment-box {
     margin-top: 2%;
-    background-color: #07C57F;
+    background: #a8ff78;
+    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
+    background: linear-gradient(to right, #78ffd6, #a8ff78);
     border-radius: 25px;
+    border: 1px solid black;
 }
-.commenter-name{
+
+.commenter-name {
     padding-left: 4%;
     padding-top: 2%;
 }
-.commenter-name-text{
+
+.commenter-name-text {
     font-size: 12.5px;
     font-weight: bold;
 }
 
-.commenter-comment{
+.commenter-comment {
     padding-left: 5%;
     padding-right: 3%;
     padding-bottom: .5%;
 }
-.commenter-comment-text{
-    font-size: 16px;
+
+.commenter-comment-text {
+    font-size: 20px;
     text-align: start;
     margin: 15px 25px;
+    padding:0px 10px;
 }
+
 .comment-text {
     max-width: 40%;
     height: 35px;
