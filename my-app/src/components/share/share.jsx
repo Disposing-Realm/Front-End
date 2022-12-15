@@ -4,7 +4,6 @@ import AppContext from "../../context/appContext";
 import axios from "axios"
 import { Image } from "cloudinary-react"
 import ReactAvatarEditor from "react-avatar-editor";
-// import Resizer from "react-image-file-resizer";
 
 export default function Share(props) {
     const form = document.querySelector("form");
@@ -27,7 +26,7 @@ export default function Share(props) {
             ))
         }
 
-        for(let i = 0; i < promises.length; i++) {
+        for (let i = 0; i < promises.length; i++) {
             let newUrl = promises[i].data.secure_url
             newUrl = newUrl.slice(newUrl.length - 4, newUrl.length) === "heic" ? newUrl.slice(0, newUrl.length - 4) + "jpg" : newUrl
             httpLink.push(newUrl)
@@ -52,18 +51,23 @@ export default function Share(props) {
     }
 
     return (
-        <form id="submit-form" onSubmit={(e) => {
-            e.preventDefault()
-            uploadImage(e.target[0].files, e.target[1].value)
-        }}>
-            <label htmlFor="file">Choose a before and after photo to upload</label>
-            <br />
-            <input id="file-input" type="file" multiple />
-            <br />
-            <input id="descript" autoComplete="off" type="text" name="search" size="35" placeholder="What do you want to post" required />
-            <br />
-            <input id="submit-button" type="submit" />
-        </form>
+        <>
+            <form id="submit-form" onSubmit={(e) => {
+                e.preventDefault()
+                uploadImage(e.target[1].files, e.target[0].value)
+            }}>
+                <textarea id="descript" autoComplete="off" type="text" name="search" size="35" placeholder="What do you want to post" required />
+                <div id="upload-submit">
+                    <p id="upload-description">Upload Two Images of Your Contributed Cleanup</p>
+                    <label id="label-container">
+                        <input id="file-input" type="file" multiple />
+                        Upload
+                    </label>
+                    <input id="submit-button" type="submit" />
+                </div>
+
+            </form>
+        </>
     )
 }
 
