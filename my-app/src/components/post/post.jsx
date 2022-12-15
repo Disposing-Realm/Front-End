@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import AppContext from "../../context/appContext.jsx";
 import Comments from "../comments/comment.jsx";
 import { UserContext } from "../../context/userContext";
-import { AiFillHeart } from 'react-icons/ai';
+import { AiFillHeart, AiOutlineUser } from 'react-icons/ai';
 import { BiCommentDetail } from "react-icons/bi"
+import { VscAccount } from "react-icons/vsc";
 
 
 export default function Posts(props) {
@@ -16,6 +17,8 @@ export default function Posts(props) {
     const [likes, setLikes] = useState(0)
     const [trackLikes, setTrackLikes] = useState(0)
     let date = props.post_date.slice(5, 10)
+    const [open, setOpen] = useState(false);
+
 
 
     const convertTimeZone = (time) => {
@@ -27,10 +30,10 @@ export default function Posts(props) {
         }
 
         if (hour > 12) {
-            returnedTime = `${hour - 12}${time.slice(2, 5)}pm`
+            returnedTime = `${hour - 12}${time.slice(2, 5)} PM`
             return returnedTime
         } else {
-            returnedTime = `${hour}${time.slice(2, 5)}am`
+            returnedTime = `${hour}${time.slice(2, 5)} AM`
             return returnedTime
         }
 
@@ -82,11 +85,9 @@ export default function Posts(props) {
         <div className="post">
             <div className="post-info">
                 <div className="username">
-                    <p className="username-text">Dreyes</p>
-                    <div className="timestamp">
-                        <p className="posts-date">{date}</p>
-                        <p className="timestamp-text">{finalTime}</p>
-                    </div>
+                    <p className="username-text">
+                        <AiOutlineUser className="profile"/>   
+                        Dreyes</p>
                 </div>
             </div>
             <div className="post-content">
@@ -94,45 +95,49 @@ export default function Posts(props) {
                     {props.description}
                 </p>
             </div>
-            <div className = "line"></div>
-            <br></br>
+            <div className="line"></div>
             <div className="image-container">
                 <img className="posted-image" src={props.image}></img>
                 <img className="posted-image" src={props.image2}></img>
             </div>
-            <div className = "line"></div>
-            <p className="likes-post">{likes} likes</p>
-
-
+            <div className="line"></div>
+            <div className="timestamp">
+                        <p className="posts-date">{date}</p>
+                        <p className="timestamp-text">{finalTime}</p>
+                    </div>
             <div className="like-comment-button-section">
-                <div className="like-button-container">
+                <div className="like-button-container" >
                     <AiFillHeart onClick={() => { setLikes(likes => likes + 1) }} className="like-button" />
                 </div>
                 <div className="comment-button-container">
-                    <BiCommentDetail className="comment-button" />
+                    <BiCommentDetail onClick={() => {
+                        setOpen(!open);
+                    }} className="comment-button" />
                 </div>
             </div>
-            {/* <Comments/> */}
-            {comments.map((ele, i) =>
-                <Comments
-                    key={i + 1}
-                    comments={ele.commentary}
-                />
-            )}
+            <p className="likes-post">{likes} likes</p>
             <div className="write-comment-section">
                 <form onSubmit={(e) => {
                     e.preventDefault()
                     handleComment(e.target[0].value)
                 }}>
                     <div className="comment-bar">
-                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder="Write a comment..." required
+                        <input autoComplete="off" type="text" className="comment-text" name="search" size="35" placeholder="Comment..." required
                             id="commentPost" />
-                        <button className="submit-comment-button">✩Post Comment✩</button>
+                        {/* <button className="submit-comment-button">✩Post Comment✩</button> */}
                     </div>
                 </form>
             </div>
+            {/* <Comments/> */}
+            {comments.map((ele, i) =>
+                <div id={open ? "noComment" : "allComment"}>
+                    <Comments
+                        key={i + 1}
+                        comments={ele.commentary}
+                    />
+                </div>
+            )}
             <script src="https://kit.fontawesome.com/c53ca3821a.js" crossorigin="anonymous"></script>
-
         </div>
     )
 }
