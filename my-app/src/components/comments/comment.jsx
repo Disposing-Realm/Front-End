@@ -1,7 +1,6 @@
 import { React, useContext, useState, useEffect } from "react";
 import "./comments.css";
 import AppContext from "../../context/appContext";
-
 export default function Comments(props) {
     const userInfo = useContext(AppContext)
     const [comment, setComment] = useState([])
