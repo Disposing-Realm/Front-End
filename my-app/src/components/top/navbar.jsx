@@ -35,29 +35,7 @@ export default function NavBar() {
 
 
         <div id="navbarBasicExample" className="navbar-menu">
-          <div className="navbar-start">
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">
-                More
-              </a>
-
-              <div className="navbar-dropdown">
-                <a className="navbar-item">
-                  About
-                </a>
-                <a className="navbar-item">
-                  Profile
-                </a>
-                <Link to="/leaderboard">
-                <a className="navbar-item">
-                  Leaderboard
-                </a>
-                </Link>
-                <hr className="navbar-divider" />
-              </div>
-            </div>
-          </div>
+     
 
 
           <div className="navbar-end">

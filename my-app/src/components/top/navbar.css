@@ -16,6 +16,7 @@ figure {
 }
 
 #logo{
+    margin-left: 30px;
     font-family: klavika;
     font-size: 40px;
     font-weight: 500;
@@ -39,4 +40,12 @@ figure {
     font-size: 18px;
     font-weight: bold;
     margin-right: 20px;
+}
+
+.buttons{
+    margin-left: 900px;
+}
+
+.button is-primary{
+    margin-right: 200px;
 }
