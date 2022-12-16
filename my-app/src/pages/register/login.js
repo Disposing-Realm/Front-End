@@ -6,7 +6,7 @@ import Navbar from "../../components/top/navbar"
 export const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setUser } = useContext(UserContext);
+  //const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const sendCredentials = (email, password) => {
@@ -25,8 +25,7 @@ export const Login = (props) => {
         throw Error("Invalid Username/Password");
       })
       .then((json) => {
-        setUser(json)
-        document.cookie = JSON.stringify(json)
+        window.localStorage.setItem('user', JSON.stringify(json))
       })
       .catch((err) => console.log(err));
   };
@@ -35,6 +34,7 @@ export const Login = (props) => {
     e.preventDefault();
     sendCredentials(email, password)
     navigate("/landing");
+    window.location.reload()
   }
 
 
