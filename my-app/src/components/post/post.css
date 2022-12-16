@@ -110,7 +110,8 @@
 }
 
 .likes-post {
-
+    margin-top: 23px;
+    margin-left: 25px;
     padding: 10px 50px;
     font-weight: 1000;
     font-size: 12px;
