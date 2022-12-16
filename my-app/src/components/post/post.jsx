@@ -86,7 +86,7 @@ export default function Posts(props) {
             <div className="post-info">
                 <div className="username">
                     <p className="username-text">
-                        <AiOutlineUser className="profile"/>   
+                        <AiOutlineUser className="profile" />
                         Dreyes</p>
                 </div>
             </div>
@@ -95,27 +95,38 @@ export default function Posts(props) {
                     {props.description}
                 </p>
             </div>
-            <div className="line"></div>
+            <div className="line" id="first-line"></div>
             <div className="image-container">
                 <img className="posted-image" src={props.image}></img>
                 <img className="posted-image" src={props.image2}></img>
             </div>
             <div className="line"></div>
-            <div className="timestamp">
-                        <p className="posts-date">{date}</p>
-                        <p className="timestamp-text">{finalTime}</p>
+
+
+            <div id="like-comment-timestamp-parent">
+
+
+
+                <div className="like-comment-button-section">
+                    <div className="like-button-container" /*style={{ height: "10px" }}*/>
+                        <AiFillHeart onClick={() => { setLikes(likes => likes + 1) }} className="like-button" />
                     </div>
-            <div className="like-comment-button-section">
-                <div className="like-button-container" style={{height:"10px"}}>
-                    <AiFillHeart onClick={() => { setLikes(likes => likes + 1) }} className="like-button" />
+
+                    <div className="comment-button-container" /*style={{ height: "10px" }}*/>
+                        <BiCommentDetail onClick={() => {
+                            setOpen(!open);
+                        }} className="comment-button" />
+                    </div>
                 </div>
 
-                <div className="comment-button-container" style={{height:"10px"}}>
-                    <BiCommentDetail onClick={() => {
-                        setOpen(!open);
-                    }} className="comment-button" />
+                <div className="timestamp">
+                    <p className="posts-date">{date}</p>
+                    <p className="timestamp-text">{finalTime}</p>
                 </div>
+
             </div>
+
+
             <p className="likes-post">{likes} likes</p>
             <div className="write-comment-section">
                 <form onSubmit={(e) => {
