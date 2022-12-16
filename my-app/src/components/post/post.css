@@ -68,7 +68,10 @@
 
 .timestamp {
     display: flex;
-    margin-right: 12px;
+    min-width: 110px;
+    margin-left: 400px;
+    margin-top: 1px;
+
 }
 
 .posts-date {
@@ -113,27 +116,30 @@
     font-size: 12px;
 }
 
-
-.like-comment-button-section {
+#like-comment-timestamp-parent{
     display: flex;
-    width: 90%;
-    color: black;
-    max-height: 90px;
-    z-index: 5;
+    max-height: 1px;
 
 }
 
-/* .like-button-container{
-    background-color: #0D2129;
-} */
+.like-comment-button-section {
+    display: flex;
+    width: 50px;
+    color: black;
+    z-index: 5;
+    max-height: 2px;
+}
+
+
+
 .like-button {
     width: 25px;
-    height: 25px;
+    /* height: 25px; */
 }
 
 .like-button:hover {
     width: 25px;
-    height: 25px;
+    /* height: 25px; */
     animation-duration: 2s;
     animation-name: bounce;
     animation-iteration-count: infinite;
@@ -143,12 +149,12 @@
 
 .comment-button {
     width: 25px;
-    height: 25px;
+    /* height: 25px; */
 }
 
 .comment-button:hover {
     width: 25px;
-    height: 25px;
+    /* height: 25px; */
     color: cyan;
     animation: shake 0.5s;
     animation-iteration-count: infinite;
